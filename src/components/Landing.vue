@@ -9,6 +9,8 @@
       <object id="unicorn" data="/static/balloonicorn2.min.svg" type="image/svg+xml"></object>
     </div>
 
+    <div id="cloud"></div>
+
   </div>
 </template>
 
@@ -29,7 +31,7 @@ function genPartical() {
     p.style['bottom'] = '-16vw'
     p.style['right'] = '-9vw'
     p.style['border-radius'] = '50%'
-    p.style['z-index'] = '0'
+    p.style['z-index'] = 0
     uc.appendChild(p);
     animatePartical(p,i)
   }
@@ -49,14 +51,48 @@ function animatePartical(p,i) {
   });
 }
 
+function genCloud() {
+  let cl = document.getElementById('cloud')
+  
+  for (let i = 0; i < 9; i++) {
+    let c = document.createElement('div')
+    let rand = anime.random(16,20)
+
+    c.style['background-color'] = 'white'
+    c.style['width'] = rand+'vw'
+    c.style['height'] = rand+'vw'
+    c.style['position'] = 'absolute'
+    c.style['bottom'] = -rand/2+'vw'
+    c.style['left'] = i*100/8 - rand/2 + anime.random(-1,1) + 'vw'
+    c.style['border-radius'] = '50%'
+    c.style['z-index'] = 20
+    cl.appendChild(c)
+    animateCloud(c)
+  }
+}
+
+function animateCloud(c) {
+  anime({
+    targets: c,
+    direction: 'alternate',
+    delay: () => anime.random(0,1000),
+    translateY: () => anime.random(1,2)+'vw',
+    duration: 2000,
+    loop: true,
+    easing: 'easeInOutQuad',
+  })
+}
+
 export default {
   name: 'Landing',
   mounted() {
     timeline = anime.timeline({
       direction: 'normal',
       autoplay: true,
-      // loop: true,
-      begin: () => genPartical()
+      begin: () => {
+        genCloud()
+        genPartical()
+      }
     });
 
     // Start animation
@@ -128,5 +164,11 @@ export default {
     width: 14vw;
     z-index: 10;
   }
+}
+
+#cloud {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 </style>
