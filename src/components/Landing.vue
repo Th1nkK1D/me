@@ -9,7 +9,8 @@
       <object id="unicorn" data="/static/balloonicorn2.min.svg" type="image/svg+xml"></object>
     </div>
 
-    <div id="cloud"></div>
+    <div class="cloud" id="cloud-far"></div>
+    <div class="cloud" id="cloud-close"></div>
 
   </div>
 </template>
@@ -22,14 +23,14 @@ function genPartical() {
   let uc = document.getElementById('balloonicon')
   let colors = ['#ab47bc','#5c6bc0','#29b6f6','#66bb6a','#ffee58','#ffa726','#ef5350']
   
-  for (let i = 0; i < 70; i++) {
+  for (let i = 0; i < 49; i++) {
     let p = document.createElement('div')
     p.style['background-color'] = colors[i%7]
     p.style['width'] = '1vw'
     p.style['height'] = '1vw'
     p.style['position'] = 'absolute'
-    p.style['bottom'] = '-16vw'
-    p.style['right'] = '-9vw'
+    p.style['bottom'] = '-14vw'
+    p.style['right'] = '-8vw'
     p.style['border-radius'] = '50%'
     p.style['z-index'] = 0
     uc.appendChild(p);
@@ -40,7 +41,7 @@ function genPartical() {
 function animatePartical(p,i) {
   anime({
     targets: p,
-    delay: (t) => i*8,
+    delay: () => i*8,
     translateX: () => anime.random(6,12)+'vw',
     translateY: () => anime.random(8,15)+'vw',
     duration: (t) => 1200,
@@ -51,19 +52,19 @@ function animatePartical(p,i) {
   });
 }
 
-function genCloud() {
-  let cl = document.getElementById('cloud')
+function genCloud(parent,bg,offset) {
+  let cl = document.getElementById(parent)
   
   for (let i = 0; i < 9; i++) {
     let c = document.createElement('div')
     let rand = anime.random(16,20)
 
-    c.style['background-color'] = 'white'
+    c.style['background-color'] = bg
     c.style['width'] = rand+'vw'
     c.style['height'] = rand+'vw'
     c.style['position'] = 'absolute'
     c.style['bottom'] = -rand/2+'vw'
-    c.style['left'] = i*100/8 - rand/2 + anime.random(-1,1) + 'vw'
+    c.style['left'] = i*100/8 - rand/2 + anime.random(-1,1) + offset + 'vw'
     c.style['border-radius'] = '50%'
     c.style['z-index'] = 20
     cl.appendChild(c)
@@ -90,7 +91,8 @@ export default {
       direction: 'normal',
       autoplay: true,
       begin: () => {
-        genCloud()
+        genCloud('cloud-far','#CBC2DF',5)
+        genCloud('cloud-close','white',0)
         genPartical()
       }
     });
@@ -98,13 +100,23 @@ export default {
     // Start animation
     timeline
       .add({
+        // Cloud in
+        targets: '.cloud',
+        opacity: [0,1],
+        translateY: ['10vh',0],
+        duration: 2000,
+        easing: 'easeInOutQuad',
+        delay: (el,i) => i*500,
+      })
+      .add({
         // Unicon in
         targets: '#balloonicon',
         translateY: ['90vh',0],
         translateX: ['40vw',0],
         duration: 3000,
         elasticity: 200,
-        easing: 'easeInOutElastic'
+        easing: 'easeInOutElastic',
+        offset: '-=1500'
       }).add({
         // Title in
         targets: 'span',
@@ -142,13 +154,13 @@ export default {
   
 
   #title {
-    font-size: 15vw;
+    font-size: 13vw;
     font-weight: 100;
     margin: 0;
   }
 
   #subtitle {
-    font-size: 2.17vw;
+    font-size: 2.15vw;
     font-weight: 200;
     margin: 5vw 0 0 0;
   }
@@ -157,18 +169,29 @@ export default {
 #balloonicon {
   position: absolute;
   top: 25vh;
-  left: 35.5vw;
+  left: 38vw;
+  z-index: 10;
 
   #unicorn {
     position: absolute;
-    width: 14vw;
+    width: 12vw;
     z-index: 10;
   }
 }
 
-#cloud {
+.cloud {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  
+
+  &#cloud-far {
+    bottom: 3vh;
+    z-index: 5;
+  }
+
+  &#cloud-close {
+    bottom: 0;
+    z-index: 15;
+  }
 }
 </style>
