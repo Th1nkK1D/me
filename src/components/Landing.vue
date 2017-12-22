@@ -1,7 +1,7 @@
 <template>
   <div id="stage">
     <div id="text">
-      <h1 id="title">LO &nbsp;&nbsp;&nbsp;&nbsp; KKID</h1>
+      <h1 id="title"><span>L</span><span>O</span> &nbsp;&nbsp;&nbsp;&nbsp; <span>K</span><span>K</span><span>I</span><span>D</span></h1>
       <h4 id="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
     </div>
 
@@ -53,21 +53,35 @@ export default {
   name: 'Landing',
   mounted() {
     timeline = anime.timeline({
-      direction: 'reverse',
+      direction: 'normal',
       autoplay: true,
       // loop: true,
       begin: () => genPartical()
     });
 
+    // Start animation
     timeline
       .add({
+        // Unicon in
         targets: '#balloonicon',
-        translateY: '90vh',
-        translateX: '40vw',
-        
+        translateY: ['90vh',0],
+        translateX: ['40vw',0],
         duration: 3000,
         elasticity: 200,
         easing: 'easeInOutElastic'
+      }).add({
+        // Title in
+        targets: 'span',
+        opacity: [0,1],
+        duration: 8000,
+        delay: () => anime.random(0,1000),
+        offset: '-=500'
+      }).add({
+        // Subtitle in
+        targets: '#subtitle',
+        opacity: [0,1],
+        duration: 3000,
+        offset: '-=7000'
       })
   }
 }
