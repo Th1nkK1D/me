@@ -143,6 +143,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 #text {
