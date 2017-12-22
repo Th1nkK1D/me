@@ -3,10 +3,11 @@
     <div id="text">
       <h1 id="title"><span>L</span><span>O</span> &nbsp;&nbsp;&nbsp;&nbsp; <span>K</span><span>K</span><span>I</span><span>D</span></h1>
       <h4 id="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
+      <img id="caret" src="/static/svg/caret_down.min.svg"/>
     </div>
 
     <div id="balloonicon">
-      <object id="unicorn" data="/static/balloonicorn2.min.svg" type="image/svg+xml"></object>
+      <object id="unicorn" data="/static/svg/balloonicorn2.min.svg" type="image/svg+xml"></object>
     </div>
 
     <div class="cloud" id="cloud-far"></div>
@@ -148,7 +149,7 @@ export default {
 
 #text {
   position: absolute;
-  top: 25vh;
+  top: 22vh;
   margin: 0 auto;
   text-align: center;
   z-index: 12;
@@ -161,15 +162,25 @@ export default {
   }
 
   #subtitle {
-    font-size: 2.15vw;
+    font-size: 1.9vw;
     font-weight: 200;
-    margin: 5vw 0 0 0;
+    margin: 3vw 0 3vw 0;
+  }
+
+  #caret {
+    width: 3vw;
+    height: auto;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
 #balloonicon {
   position: absolute;
-  top: 25vh;
+  top: 22vh;
   left: 38vw;
   z-index: 10;
 
