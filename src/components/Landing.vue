@@ -3,14 +3,14 @@
     <div id="text">
       <h1 id="title"><span>L</span><span>O</span> &nbsp;&nbsp;&nbsp;&nbsp; <span>K</span><span>K</span><span>I</span><span>D</span></h1>
       <h4 id="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
-      
-      <div id="caret">
-        <img @click="go()" src="/static/svg/caret_down.min.svg"/>
-      </div>
     </div>
 
     <div id="balloonicon">
       <object id="unicorn" data="/static/svg/balloonicorn2.min.svg" type="image/svg+xml"></object>
+    </div>
+
+    <div id="caret">
+      <img @click="go()" src="/static/svg/caret_down.min.svg"/>
     </div>
 
     <div class="cloud" id="cloud-far"></div>
@@ -21,7 +21,9 @@
 
 <script>
 import anime from 'animejs'
+
 let timeline
+let unicon
 
 function genPartical() {
   let uc = document.getElementById('balloonicon')
@@ -91,6 +93,7 @@ function animateCloud(c) {
 export default {
   name: 'Landing',
   mounted() {
+    // Init timeline
     timeline = anime.timeline({
       direction: 'normal',
       autoplay: true,
@@ -101,7 +104,19 @@ export default {
       }
     });
 
-    // Start animation
+    // Init unicorn
+    unicon = anime({
+      targets: '#unicorn',
+      direction: 'alternate',
+      translateY: '2vh',
+      autoplay: false,
+      duration: 1500,
+      loop: true,
+      easing: 'easeInOutQuad',
+      
+    });
+
+    // Play timeline
     timeline
       .add({
         // Cloud in
@@ -120,7 +135,8 @@ export default {
         duration: 3000,
         elasticity: 200,
         easing: 'easeInOutElastic',
-        offset: 1000
+        offset: 1000,
+        complete: () => unicon.play()
       })
       .add({
         // Title in
@@ -161,6 +177,7 @@ export default {
         elasticity: 200,
         easing: 'easeInOutElastic',
         offset: 8000,
+        begin: () => unicon.pause()
       })
       .add({
         // Far Cloud out
@@ -216,25 +233,13 @@ export default {
   #subtitle {
     font-size: 1.9vw;
     font-weight: 200;
-    margin: 3vw 0 3vw 0;
-  }
-
-  #caret {
-    img {
-      width: 3vw;
-      height: auto;
-      opacity: 0.5;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
+    margin: 3vw 0;
   }
 }
 
 #balloonicon {
   position: absolute;
-  top: 22vh;
+  top: 21vh;
   left: 38vw;
   z-index: 10;
 
@@ -245,13 +250,29 @@ export default {
   }
 }
 
+#caret {
+  position: absolute;
+  bottom: 20vw;
+
+  img {
+    width: 40px;
+    height: auto;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 .cloud {
   width: 100%;
   position: absolute;
   
 
   &#cloud-far {
-    bottom: 3vh;
+    bottom: 2vw;
     z-index: 5;
   }
 
