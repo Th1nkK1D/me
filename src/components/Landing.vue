@@ -3,7 +3,10 @@
     <div id="text">
       <h1 id="title"><span>L</span><span>O</span> &nbsp;&nbsp;&nbsp;&nbsp; <span>K</span><span>K</span><span>I</span><span>D</span></h1>
       <h4 id="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
-      <img id="caret" src="/static/svg/caret_down.min.svg"/>
+      
+      <div id="caret">
+        <img @click="go()" src="/static/svg/caret_down.min.svg"/>
+      </div>
     </div>
 
     <div id="balloonicon">
@@ -117,21 +120,70 @@ export default {
         duration: 3000,
         elasticity: 200,
         easing: 'easeInOutElastic',
-        offset: '-=1500'
-      }).add({
+        offset: 1000
+      })
+      .add({
         // Title in
         targets: 'span',
         opacity: [0,1],
         duration: 8000,
         delay: () => anime.random(0,1000),
-        offset: '-=500'
-      }).add({
+        offset: 4000
+      })
+      .add({
         // Subtitle in
         targets: '#subtitle',
         opacity: [0,1],
         duration: 3000,
-        offset: '-=7000'
+        offset: 5000
       })
+      .add({
+        // Caret in
+        targets: '#caret',
+        opacity: [0,1],
+        duration: 1000,
+        offset: 6000,
+        complete: () => timeline.pause()
+      })
+      .add({
+        // Text out
+        targets: ['#caret','#subtitle','#title'],
+        opacity: 0,
+        duration: 3000,
+        offset: 7500,
+      })
+      .add({
+        // Unicon out
+        targets: '#balloonicon',
+        translateY: '-90vh',
+        translateX: '-40vw',
+        duration: 3000,
+        elasticity: 200,
+        easing: 'easeInOutElastic',
+        offset: 8000,
+      })
+      .add({
+        // Far Cloud out
+        targets: '#cloud-far',
+        opacity: 0,
+        translateY: '5vh',
+        duration: 3000,
+        offset: 9000
+      })
+      .add({
+        // Stage out
+        targets: '#stage',
+        translateY: '-100vh',
+        duration: 600,
+        easing: 'easeInQuad',
+        offset: 9000,
+        complete: () => console.log('complete')
+      })
+  },
+  methods: {
+    go() {
+      timeline.play()
+    }
   }
 }
 </script>
@@ -168,12 +220,14 @@ export default {
   }
 
   #caret {
-    width: 3vw;
-    height: auto;
-    opacity: 0.5;
+    img {
+      width: 3vw;
+      height: auto;
+      opacity: 0.5;
 
-    &:hover {
-      opacity: 1;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
