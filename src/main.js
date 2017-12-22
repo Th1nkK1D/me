@@ -3,11 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import anime from 'animejs'
 
 Vue.config.productionTip = false
-
-Vue.use(anime)
 
 /* eslint-disable no-new */
 new Vue({
