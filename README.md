@@ -1,4 +1,4 @@
-# k1d.me
+# me
 
 > My official online portfolio
 
