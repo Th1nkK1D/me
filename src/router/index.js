@@ -8,7 +8,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/me',
+      path: '/',
       name: 'Landing',
       component: Landing
     }
