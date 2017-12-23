@@ -205,7 +205,7 @@ export default {
         duration: 600,
         easing: 'easeInQuad',
         offset: 9000,
-        complete: () => this.$router.push('Profile')
+        complete: () => this.$router.push('profile')
       })
   },
   methods: {

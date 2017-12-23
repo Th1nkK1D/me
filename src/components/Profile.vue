@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="two columns"><span class="icon-direction"></span></div>
-      <div class="ten columns">View here</div>
+      <div class="ten columns">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -13,8 +15,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+  .title {
+    color: #5F537B;
+  }
 </style>
 
 
