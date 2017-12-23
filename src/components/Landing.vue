@@ -3,6 +3,7 @@
     <div id="text">
       <h1 id="title"><span>L</span><span>O</span> &nbsp;&nbsp;&nbsp;&nbsp; <span>K</span><span>K</span><span>I</span><span>D</span></h1>
       <h4 id="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
+      <h4 id="tag">#Web &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Technologies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Changemaker &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #SocialStartup</h4>
     </div>
 
     <div id="balloonicon">
@@ -157,6 +158,13 @@ export default {
         offset: 5000
       })
       .add({
+        // Tag in
+        targets: '#tag',
+        opacity: [0,1],
+        duration: 3000,
+        offset: 5500
+      })
+      .add({
         // Caret in
         targets: '#caret',
         opacity: [0,1],
@@ -166,7 +174,7 @@ export default {
       })
       .add({
         // Text out
-        targets: ['#caret','#subtitle','#title'],
+        targets: ['#caret','#subtitle','#title','#tag'],
         opacity: 0,
         duration: 3000,
         offset: 7500,
@@ -237,6 +245,12 @@ export default {
     font-size: 1.9vw;
     font-weight: 200;
     margin: 3vw 0;
+  }
+
+  #tag {
+    font-size: 2.02vw;
+    font-weight: 200;
+    color: #A08DCA;
   }
 }
 
