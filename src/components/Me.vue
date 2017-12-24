@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <h1 class="title">ME</h1>
 
     <div class="row bio">
@@ -13,8 +13,16 @@
         </div>
         <p><i class="icon-direction"></i> 17 Soi Panichthon 21 Jarun 13 Rd. Bangkokyai, Bangkok, Thailand 10600</p>
         <div class="row">
+          <div class="six columns"><i class="icon-present"></i> 13 Nov 1996</div>
           <div class="six columns"><i class="icon-phone"></i> (+66) 85 125 5278</div>
+        </div>
+        <div class="row">
           <div class="six columns"><i class="icon-envelope-open"></i> witheep@gmail.com</div>
+          <div class="six columns"><i class="icon-social-github"></i> Th1nkK1D</div>
+        </div>
+        <div class="row">
+          <div class="six columns"><i class="icon-social-facebook"></i> Lookkid Withee Poositasai</div>
+          <div class="six columns"><i class="icon-social-youtube"></i> Witheep</div>
         </div>
       </div>
     </div>
