@@ -23,9 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .title {
-    color: #5F537B;
-  }
+
 </style>
 
 
