@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="two columns"><span class="icon-direction"></span></div>
+      <div class="two columns">
+        <navbar></navbar>
+      </div>
       <div class="ten columns">
         <router-view></router-view>
       </div>
@@ -10,8 +12,13 @@
 </template>
 
 <script>
+import Navbar from './Navbar'
+
 export default {
-  name: 'Profile'
+  name: 'Profile',
+  components: {
+    Navbar
+  }
 }
 </script>
 
