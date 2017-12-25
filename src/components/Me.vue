@@ -14,7 +14,12 @@
 
           <div class="columns is-gapless is-multiline">
             <div v-for="field in bio" :key="field.icon" :class="'column is-'+field.size">
-              <div class="padder"><i :class="'icon-'+field.icon"></i> {{field.text}}</div>
+              <div class="padder">
+                <i v-if="field.icon" :class="'icon-'+field.icon"></i>
+                <img v-else :src="field.custom_icon" class="custom-icon">
+                <a v-if="field.link" :href="field.link" target="_blank">{{field.text}}</a>
+                <span v-else> {{field.text}}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -66,10 +71,10 @@ export default {
         {icon: 'direction', text: '17 Soi Panichayakarnthonburi 21, Jarunsamitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600', size: 11},
         {icon: 'present', text: '13 Nov 1996', size: 4},
         {icon: 'phone', text: '(+66) 85 125 5278', size: 4},
-        {icon: 'envelope-open', text: 'witheep@gmail.com', size: 4},
-        {icon: 'social-github', text: 'Th1nkK1D', size: 4},
-        {icon: 'social-facebook', text: 'Lookkid Withee Poositasai', size: 4},
-        {icon: 'social-youtube', text: 'Witheep', size: 4},
+        {icon: 'envelope-open', text: 'witheep@gmail.com', link: 'mailto:witheep@gmail.com', size: 4},
+        {icon: 'social-facebook', text: 'Lookkid Withee Poositasai', link: 'https://www.facebook.com/Th1nkK1D', size: 4},
+        {icon: 'social-github', text: 'Th1nkK1D', link: 'https://github.com/Th1nkK1D', size: 4},
+        {custom_icon: '/static/svg/codepen.min.svg', text: '@Th1nkK1D', link: 'https://codepen.io/Th1nkK1D', size: 4},
       ],
       skills: [
         {
@@ -128,6 +133,24 @@ export default {
       font-size: 40px;
       font-weight: bold;
       margin: 0 0 0.5em 0;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        color: #5F537B;
+      }
+    }
+
+    i {
+      color: #968cad;
+    }
+
+    .custom-icon {
+      height: 16px;
+      width: auto;
     }
   }
 </style>
