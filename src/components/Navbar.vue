@@ -4,7 +4,7 @@
         <router-link class="link" to="/profile"><i class="icon-emotsmile"></i></router-link>
       </div>
       <div class="column is-12">
-        <router-link class="link" to="/profile"><i class="icon-graduation"></i></router-link>
+        <router-link class="link" to="/education"><i class="icon-graduation"></i></router-link>
       </div>
       <div class="column is-12">
         <router-link class="link" to="/profile"><i class="icon-briefcase"></i></router-link>

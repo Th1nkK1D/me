@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Landing from '@/components/Landing'
 import Profile from '@/components/Profile'
 import Me from '@/components/Me'
+import Education from '@/components/Education'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
           path: '/',
           name: 'Me',
           component: Me
+        },
+        {
+          path: '/education',
+          name: 'Education',
+          component: Education
         },
       ]
     }
