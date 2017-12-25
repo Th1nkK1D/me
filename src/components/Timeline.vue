@@ -1,14 +1,11 @@
 <template>
   <div class="timeline">
-    <div class="card">
-      <p class="time">Now</p>
-      <p class="head"><strong>King Mongkut's University of Technology Thonburi</strong>, Bangkok, Thailand</p>
-      <p>Bachelor of Engineering Program in Computer Engineering (International Program) <br>GPA 3.72 out of 4 (4 semesters) - Expected May 2019</p>
-    </div>
-    <div class="card">
-      <p class="time">Now</p>
-      <p class="head"><strong>King Mongkut's University of Technology Thonburi</strong>, Bangkok, Thailand</p>
-      <p>Bachelor of Engineering Program in Computer Engineering (International Program) <br>GPA 3.72 out of 4 (4 semesters) - Expected May 2019</p>
+    <div class="card" v-for="(event,e) in data" :key="e">
+      <p class="time">{{event.time}}</p>
+      <p class="head"><strong>{{event.head}}</strong> {{event.subhead}}</p>
+      <p><span v-for="(line,l) in event.text" :key="l">{{line}}<br></span></p>
+
+      <div class="spacer" v-if="e < data.length-1"></div>
     </div>
   </div>
 </template>
@@ -26,7 +23,7 @@ export default {
     border-left-width: 1px;
 
     .card {
-      padding: 0 20px 40px 20px;
+      padding: 0 20px;
 
       p {
         margin: 0;
@@ -43,6 +40,10 @@ export default {
         font-weight: 300;
         margin-bottom: 8px;
         color: #5F537B;
+      }
+
+      .spacer {
+        height: 40px;
       }
     }
   }
