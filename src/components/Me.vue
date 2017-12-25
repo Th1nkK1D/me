@@ -51,39 +51,50 @@ export default {
     return {
       bio: [
         {icon: 'direction', text: '17 Soi Panichayakarnthonburi 21, Jarunsamitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600', size: 11},
-        {icon: 'present', text: '13 Nov 1996', size: 3},
-        {icon: 'phone', text: '(+66) 85 125 5278', size: 3},
-        {icon: 'envelope-open', text: 'witheep@gmail.com', size: 3},
-        {icon: 'social-github', text: 'Th1nkK1D', size: 3},
-        {icon: 'social-facebook', text: 'Lookkid Withee Poositasai', size: 3},
-        {icon: 'social-youtube', text: 'Witheep', size: 3},
+        {icon: 'present', text: '13 Nov 1996', size: 4},
+        {icon: 'phone', text: '(+66) 85 125 5278', size: 4},
+        {icon: 'envelope-open', text: 'witheep@gmail.com', size: 4},
+        {icon: 'social-github', text: 'Th1nkK1D', size: 4},
+        {icon: 'social-facebook', text: 'Lookkid Withee Poositasai', size: 4},
+        {icon: 'social-youtube', text: 'Witheep', size: 4},
       ],
       skills: [
         {
           name: 'Developer',
           size: 6,
-          column: 3,
+          column: 2,
           skill: [
             {label: 'HTML', value: '11'},
+            {label: 'CSS + SASS', value: '10'},
             {label: 'Javascript', value: '8'},
+            {label: 'VueJS', value: '6'},
+            {label: 'Angular', value: '5'},
+            {label: 'PHP', value: '5'},
+            {label: 'Ruby', value: '6'},
+            {label: 'Python', value: '4'},
+            {label: 'R', value: '4'},
+            {label: 'C', value: '7'},
           ]
         },
         {
           name: 'Designer',
+          size: null,
           column: 1,
-          size: 2,
           skill: [
-            {label: 'HTML', value: '11'},
-            {label: 'Javascript', value: '8'},
+            {label: 'Sketch', value: '5'},
+            {label: 'XD', value: '7'},
+            {label: 'Illustrator', value: '6'},
+            {label: 'Photoshop', value: '5'},
+            {label: 'After Effect', value: '3'},
           ]
         },
         {
-          name: 'Language',
+          name: 'Communication',
+          size: null,
           column: 1,
-          size: 2,
           skill: [
-            {label: 'HTML', value: '11'},
-            {label: 'Javascript', value: '8'},
+            {label: 'Thai', value: '12'},
+            {label: 'English', value: '9'},
           ]
         }
       ]

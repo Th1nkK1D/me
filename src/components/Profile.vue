@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss">
   .padder {
-    margin: 0.5em
+    margin: 0.5em 1em;
   }
 </style>
 

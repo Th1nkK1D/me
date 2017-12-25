@@ -19,7 +19,7 @@ export default {
     font-size: 12px;
   }
   .bar {
-    height: 2px;
+    height: 3px;
     background-color: #D8D8D8;
 
     .scale {
