@@ -1,7 +1,7 @@
 <template>
   <div class="container is-fluid">
     <div class="columns is-gapless">
-      <div class="column is-narrow">
+      <div class="column is-2">
         <div class="padder">
           <navbar></navbar>
         </div>
