@@ -123,12 +123,20 @@ export default {
     // Play timeline
     timeline
       .add({
+          // Cloud in
+          targets: '#stage',
+          opacity: [0,1],
+          duration: 500,
+          easing: 'easeInOutQuad',
+        })
+      .add({
         // Cloud in
         targets: '.cloud',
         opacity: [0,1],
         translateY: ['10vh',0],
         duration: 2000,
         easing: 'easeInOutQuad',
+        offset: 500,
         delay: (el,i) => i*500,
       })
       .add({

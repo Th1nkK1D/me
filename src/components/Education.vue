@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>EDUCATION</h1>
-    <timeline :data="education"></timeline>
+    <timeline title="EDUCATION" :data="education"></timeline>
   </div>
 </template>
 

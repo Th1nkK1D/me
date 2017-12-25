@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 class="title">ME</h1>
+    <h1 class="title layer">ME</h1>
     <!-- bio -->
-    <div class="columns is-gapless bio">
+    <div class="columns is-gapless layer bio">
       <div class="column is-narrow">
         <div class="padder">
           <img src="/static/img/lkavatar.jpg" alt="" class="avatar">
@@ -21,9 +21,9 @@
       </div>
     </div><!-- end of bio -->
     
-    <h2>Skills</h2>
+    <h2 class="layer">Skills</h2>
     <!-- skills -->
-    <div class="columns is-gapless">
+    <div class="columns is-gapless layer">
       <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size">
         <div class="padder">
           <h3>{{cat.name}}</h3>
@@ -40,12 +40,25 @@
 
 
 <script>
+import anime from 'animejs'
 import Skillbar from './Skillbar'
 
 export default {
   name: 'Me',
   components: {
     Skillbar
+  },
+  mounted() {
+    anime({
+      targets: '.layer',
+      direction: 'normal',
+      translateY: ['10vw',0],
+      opacity: [0,1],
+      duration: 1500,
+      delay: (el,i) => i*100,
+      loop: false,
+      easing: 'easeOutQuad',
+    })
   },
   data() {
     return {

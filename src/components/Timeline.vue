@@ -1,19 +1,36 @@
 <template>
-  <div class="timeline">
-    <div class="card" v-for="(event,e) in data" :key="e">
-      <p class="time">{{event.time}}</p>
-      <p class="head"><strong>{{event.head}}</strong> {{event.subhead}}</p>
-      <p><span v-for="(line,l) in event.text" :key="l">{{line}}<br></span></p>
+  <div>
+    <h1 class="layer">{{title}}</h1>
+    <div class="timeline layer">
+      <div class="card layer" v-for="(event,e) in data" :key="e">
+        <p class="time">{{event.time}}</p>
+        <p class="head"><strong>{{event.head}}</strong> {{event.subhead}}</p>
+        <p><span v-for="(line,l) in event.text" :key="l">{{line}}<br></span></p>
 
-      <div class="spacer" v-if="e < data.length-1"></div>
+        <div class="spacer" v-if="e < data.length-1"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import anime from 'animejs'
+
 export default {
   name: 'Timeline',
-  props: ['data']
+  props: ['title','data'],
+  mounted() {
+    anime({
+      targets: '.layer',
+      direction: 'normal',
+      translateY: ['10vw',0],
+      opacity: [0,1],
+      duration: 1500,
+      delay: (el,i) => i*100,
+      loop: false,
+      easing: 'easeOutQuad',
+    })
+  }
 }
 </script>
 

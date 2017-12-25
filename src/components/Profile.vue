@@ -44,11 +44,11 @@ export default {
 
   .fade-enter-active, .fade-leave-active {
     transition-property: opacity;
-    transition-duration: .25s;
+    transition-duration: .2s;
   }
 
   .fade-enter-active {
-    transition-delay: .25s;
+    transition-delay: .2s;
   }
 
   .fade-enter, .fade-leave-active {
