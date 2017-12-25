@@ -8,7 +8,9 @@
       </div>
       <div class="column">
         <div class="padder">
-          <router-view></router-view>   
+          <transition name="fade">
+            <router-view></router-view>
+          </transition>
         </div>    
       </div>
     </div>
@@ -38,6 +40,19 @@ export default {
 
   h1, h2 {
     color: #5F537B;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition-property: opacity;
+    transition-duration: .25s;
+  }
+
+  .fade-enter-active {
+    transition-delay: .25s;
+  }
+
+  .fade-enter, .fade-leave-active {
+    opacity: 0
   }
 </style>
 
