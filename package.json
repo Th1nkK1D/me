@@ -11,8 +11,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "Skeleton": "https://github.com/dhg/Skeleton.git",
     "animejs": "^2.2.0",
+    "purecss": "^1.0.0",
     "simple-line-icons": "^2.4.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
