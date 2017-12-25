@@ -1,19 +1,7 @@
 <template>
   <div class="columns is-multiline navbar">
-    <div class="column is-12 item">
-      <router-link class="link" to="/profile"><i class="icon-emotsmile"></i></router-link>
-    </div>
-    <div class="column is-12 item">
-      <router-link class="link" to="/education"><i class="icon-graduation"></i></router-link>
-    </div>
-    <div class="column is-12 item">
-      <router-link class="link" to="/work"><i class="icon-briefcase"></i></router-link>
-    </div>
-    <div class="column is-12 item">
-      <router-link class="link" to="/projects"><i class="icon-rocket"></i></router-link>
-    </div>
-    <div class="column is-12 item">
-      <router-link class="link" to="/activities"><i class="icon-event"></i></router-link>
+    <div class="column is-12 item" v-for="item in menuItem" :key="item.route">
+      <router-link :class="{'link': true, 'active': $route.path == item.route}" :to="item.route"><i :class="'icon-' + item.icon"></i></router-link>
     </div>
   </div>
 </template>
@@ -23,6 +11,17 @@ import anime from 'animejs'
 
 export default {
   name: 'Navbar',
+  data() {
+    return {
+      menuItem: [
+        {name: 'Me', route: '/profile', icon: 'user'},
+        {name: 'Education', route: '/education', icon: 'graduation'},
+        {name: 'Work Experience', route: '/work', icon: 'briefcase'},
+        {name: 'Projects', route: '/projects', icon: 'rocket'},
+        {name: 'Activities', route: '/activities', icon: 'puzzle'},
+      ]
+    }
+  },
   mounted() {
     anime({
       targets: '.item',
@@ -46,7 +45,15 @@ export default {
   .link {
     font-size: 2em;
     text-decoration: none;
-    color: black;
+    color: #d8d8d8;
+
+    &:hover {
+      color: #968cad;
+    }
+
+    &.active {
+      color: #5F537B;
+    }
   }
 }
 
