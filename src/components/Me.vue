@@ -2,45 +2,93 @@
   <div>
     <h1 class="title">ME</h1>
     <!-- bio -->
-    <div class="columns bio">
+    <div class="columns is-gapless bio">
       <div class="column is-narrow">
-        <img src="/static/img/lkavatar.jpg" alt="" class="avatar">
+        <div class="padder">
+          <img src="/static/img/lkavatar.jpg" alt="" class="avatar">
+        </div>
       </div>
       <div class="column">
-        <h1 class="name">Withee Poositasai</h1>
+        <div class="padder">
+          <h1 class="name">Withee Poositasai</h1>
 
-        <div class="columns is-multiline">
-          <div class="column is-12">
-            <i class="icon-direction"></i> 17 Soi Panichayakarnthonburi 21, Jarunsamitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600
-          </div>
-          <div class="column is-3">
-            <i class="icon-present"></i> 13 Nov 1996
-          </div>
-          <div class="column is-3">
-            <i class="icon-phone"></i> (+66) 85 125 5278
-          </div>
-          <div class="column is-3">
-            <i class="icon-envelope-open"></i> witheep@gmail.com
-          </div>
-          <div class="column is-3">
-            <i class="icon-social-github"></i> Th1nkK1D
-          </div>
-          <div class="column is-3">
-            <i class="icon-social-facebook"></i> Lookkid Withee Poositasai
-          </div>
-          <div class="column is-3">
-            <i class="icon-social-youtube"></i> Witheep
+          <div class="columns is-gapless is-multiline">
+            <div v-for="field in bio" :key="field.icon" :class="'column is-'+field.size">
+              <div class="padder"><i :class="'icon-'+field.icon"></i> {{field.text}}</div>
+            </div>
           </div>
         </div>
       </div>
     </div><!-- end of bio -->
+    
+    <h2>Skills</h2>
+    <!-- skills -->
+    <div class="columns is-gapless">
+      <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size">
+        <div class="padder">
+          <h3>{{cat.name}}</h3>
+          <div class="columns is-gapless is-multiline">
+            <div v-for="skill in cat.skill" :key="skill.label" :class="'column is-' + 12/cat.column">
+              <div class="padder"><skillbar :label="skill.label" :value="skill.value"></skillbar></div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end of skills -->
   </div>
 </template>
 
 
 <script>
+import Skillbar from './Skillbar'
+
 export default {
-  name: 'Me'
+  name: 'Me',
+  components: {
+    Skillbar
+  },
+  data() {
+    return {
+      bio: [
+        {icon: 'direction', text: '17 Soi Panichayakarnthonburi 21, Jarunsamitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600', size: 11},
+        {icon: 'present', text: '13 Nov 1996', size: 3},
+        {icon: 'phone', text: '(+66) 85 125 5278', size: 3},
+        {icon: 'envelope-open', text: 'witheep@gmail.com', size: 3},
+        {icon: 'social-github', text: 'Th1nkK1D', size: 3},
+        {icon: 'social-facebook', text: 'Lookkid Withee Poositasai', size: 3},
+        {icon: 'social-youtube', text: 'Witheep', size: 3},
+      ],
+      skills: [
+        {
+          name: 'Developer',
+          size: 6,
+          column: 3,
+          skill: [
+            {label: 'HTML', value: '11'},
+            {label: 'Javascript', value: '8'},
+          ]
+        },
+        {
+          name: 'Designer',
+          column: 1,
+          size: 2,
+          skill: [
+            {label: 'HTML', value: '11'},
+            {label: 'Javascript', value: '8'},
+          ]
+        },
+        {
+          name: 'Language',
+          column: 1,
+          size: 2,
+          skill: [
+            {label: 'HTML', value: '11'},
+            {label: 'Javascript', value: '8'},
+          ]
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -55,10 +103,6 @@ export default {
     .name {
       font-weight: bold;
       margin: 0 0 0.5em 0;
-    }
-
-    .detail {
-      margin: 0.5em;
     }
   }
 </style>

@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <div class="columns">
+  <div class="container is-fluid">
+    <div class="columns is-gapless">
       <div class="column is-narrow">
-        <navbar></navbar>
+        <div class="padder">
+          <navbar></navbar>
+        </div>
       </div>
       <div class="column">
-        <router-view></router-view>
+        <div class="padder">
+          <router-view></router-view>   
+        </div>    
       </div>
     </div>
   </div>
@@ -23,7 +27,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .padder {
+    margin: 0.5em
+  }
 </style>
 
 

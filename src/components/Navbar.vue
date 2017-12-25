@@ -1,5 +1,5 @@
 <template>
-  <div div="columns is-multiline">
+  <div div="columns is-gapless is-multiline">
       <div class="column is-12">
         <router-link class="link" to="/profile"><i class="icon-emotsmile"></i></router-link>
       </div>
