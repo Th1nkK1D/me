@@ -7,13 +7,13 @@
         <router-link class="link" to="/education"><i class="icon-graduation"></i></router-link>
       </div>
       <div class="column is-12">
-        <router-link class="link" to="/profile"><i class="icon-briefcase"></i></router-link>
+        <router-link class="link" to="/work"><i class="icon-briefcase"></i></router-link>
       </div>
       <div class="column is-12">
-        <router-link class="link" to="/profile"><i class="icon-rocket"></i></router-link>
+        <router-link class="link" to="/projects"><i class="icon-rocket"></i></router-link>
       </div>
       <div class="column is-12">
-        <router-link class="link" to="/profile"><i class="icon-event"></i></router-link>
+        <router-link class="link" to="/activities"><i class="icon-event"></i></router-link>
       </div>
   </div>
 </template>
