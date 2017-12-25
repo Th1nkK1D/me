@@ -30,6 +30,15 @@ export default {
   .padder {
     margin: 0.5em 1em;
   }
+
+  h1 {
+    font-weight: 300;
+    font-size: 58px;
+  }
+
+  h1, h2 {
+    color: #5F537B;
+  }
 </style>
 
 

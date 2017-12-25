@@ -23,7 +23,7 @@ export default {
     border-left-width: 1px;
 
     .card {
-      padding: 0 20px;
+      padding: 0 30px;
 
       p {
         margin: 0;
@@ -31,19 +31,19 @@ export default {
 
       .time {
         font-size: 12px;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
         color: #5F537B;
       }
 
       .head {
         font-size: 18px;
         font-weight: 300;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
         color: #5F537B;
       }
 
       .spacer {
-        height: 40px;
+        height: 60px;
       }
     }
   }

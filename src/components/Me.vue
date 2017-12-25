@@ -10,7 +10,7 @@
       </div>
       <div class="column">
         <div class="padder">
-          <h1 class="name">Withee Poositasai</h1>
+          <h3 class="name">Withee Poositasai</h3>
 
           <div class="columns is-gapless is-multiline">
             <div v-for="field in bio" :key="field.icon" :class="'column is-'+field.size">
@@ -112,6 +112,7 @@ export default {
     }
 
     .name {
+      font-size: 40px;
       font-weight: bold;
       margin: 0 0 0.5em 0;
     }
