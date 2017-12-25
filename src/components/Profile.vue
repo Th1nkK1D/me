@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="pure-g">
-      <div class="pure-u-1-6">
+    <div class="columns">
+      <div class="column is-narrow">
         <navbar></navbar>
       </div>
-      <div class="pure-u-5-6">
+      <div class="column">
         <router-view></router-view>
       </div>
     </div>

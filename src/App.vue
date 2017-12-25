@@ -12,6 +12,9 @@ export default {
 
 <style lang="scss">
 
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/grid/columns.sass';
+
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
