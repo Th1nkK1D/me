@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       activity: [
-        {time: "Now", head: "President of Computer Engineering Class of 2015"},
+        {time: "Now", head: "President of Computer Engineering Class of 2019", subhead: ', since 2015'},
         {
           time: '2017', head: "Facebook Developer Circle Hackathon", subhead: ', Thailand 2017',
           text: ['CodieDoggy, Code hinter bot on Facebook Messenger'],

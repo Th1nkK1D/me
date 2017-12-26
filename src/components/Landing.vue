@@ -83,7 +83,7 @@ function genCloud(parent,bg,offset) {
     c.style['height'] = rand+'px'
     c.style['position'] = 'absolute'
     c.style['bottom'] = -rand/2+'px'
-    c.style['left'] = i*175 - rand/2 + anime.random(-cloudSize/25,cloudSize/25) + offset + 'px'
+    c.style['left'] = i*cloudSize*2/3 - rand/2 + anime.random(-cloudSize/20,cloudSize/20) + offset + 'px'
     c.style['border-radius'] = '50%'
     c.style['z-index'] = 20
     cl.appendChild(c)
@@ -311,12 +311,12 @@ export default {
   
 
   &#cloud-far {
-    bottom: 50px;
+    bottom: 25px;
     z-index: 5;
   }
 
   &#cloud-close {
-    bottom: 20px;
+    bottom: 10px;
     z-index: 15;
   }
 }
