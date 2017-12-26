@@ -12,6 +12,13 @@
       </div>
       <div class="column is-1"></div>
     </div>
+    <div class="footer">
+      <p>
+        <a href="https://github.com/Th1nkK1D/me" target="_blank">
+          Crafted with <i class="icon-heart"></i> by Th1nkK1D
+        </a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -27,6 +34,11 @@ export default {
 </script>
 
 <style lang="scss">
+  .container {
+    min-height: calc(100vh - 30px);
+    position: relative;
+  }
+
   h1 {
     font-weight: 300;
     font-size: 58px;
@@ -46,7 +58,7 @@ export default {
 
   .wrapper {
     position: relative;
-    padding-top: 50px;
+    padding: 50px 0;
 
     .nav {
       position: fixed;
@@ -54,6 +66,25 @@ export default {
       left: 0;
       z-index: 29;
       background-color: white;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -30px;
+    width: 100vw;
+    height: 30px;
+    font-size: 12px;
+
+    a {
+      text-decoration: none;
+      color: #968cad;
+
+      &:hover {
+        color: #5F537B;
+      }
     }
   }
 </style>
