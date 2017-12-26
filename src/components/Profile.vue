@@ -27,6 +27,19 @@ export default {
 </script>
 
 <style lang="scss">
+  h1 {
+    font-weight: 300;
+    font-size: 58px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .title {
+    color: #5F537B;
+  }
   .padder {
     margin: 0.5em 1em;
   }
@@ -42,15 +55,6 @@ export default {
       z-index: 29;
       background-color: white;
     }
-  }
-
-  h1 {
-    font-weight: 300;
-    font-size: 58px;
-  }
-
-  h1, h2 {
-    color: #5F537B;
   }
 </style>
 

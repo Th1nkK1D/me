@@ -26,7 +26,7 @@
       </div>
     </div><!-- end of bio -->
     
-    <h2 class="layer">Skills</h2>
+    <h2 class="layer title">Skills</h2>
     <!-- skills -->
     <div class="columns is-gapless layer">
       <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size">

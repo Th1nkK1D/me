@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="layer">{{title}}</h1>
+    <h1 class="title layer">{{title}}</h1>
     <div class="timeline layer">
       <div class="card layer" v-for="(event,e) in data" :key="e">
         <p class="time">{{event.time}}</p>
-        <p class="head"><strong>{{event.head}}</strong> {{event.subhead}}</p>
+        <p class="head"><strong class="title">{{event.head}}</strong> {{event.subhead}}</p>
         <p><span v-for="(line,l) in event.text" :key="l">{{line}}<br></span></p>
 
         <div class="spacer" v-if="e < data.length-1"></div>
