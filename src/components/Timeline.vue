@@ -3,14 +3,18 @@
     <h1 class="title layer">{{title}}</h1>
     <div class="timeline layer">
       <div class="card layer" v-for="(event,e) in data" :key="e">
-        <div class="columns is-gapless is-mobile">
+        <div class="columns is-gapless">
           <div class="column">
             <p class="time">{{event.time}}</p>
             <p class="head"><strong class="title">{{event.head}}</strong> {{event.subhead}}</p>
             <p><span v-for="(line,l) in event.text" :key="l">{{line}}<br></span></p>
           </div>
           <div class="column is-narrow">
-            <i v-if="event.icon" :class="'icon-'+event.icon"></i>
+            <div class="columns is-gapless is-mobile is-multiline links">
+              <div v-for="link in event.link" :key="link.icon" class="column is-12-tablet is-narrow-mobile">
+                <a :href="link.url" target="_blank"><i :class="'icon-'+link.icon"></i></a>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -64,6 +68,21 @@ export default {
         font-weight: 300;
         margin-bottom: 12px;
         color: #5F537B;
+      }
+
+      .links {
+        margin-top: 15px;
+
+        a {
+          color: #d8d8d8;
+          text-decoration: none;
+          margin-right: 5px;
+          font-size: 20px;
+
+          &:hover {
+            color: #968cad;
+          }
+        }
       }
 
       .spacer {
