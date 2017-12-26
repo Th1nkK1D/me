@@ -112,7 +112,7 @@ export default {
     unicon = anime({
       targets: '#unicorn',
       direction: 'alternate',
-      translateY: '2vh',
+      translateY: '1vw',
       autoplay: false,
       duration: 1500,
       loop: true,
@@ -237,34 +237,34 @@ export default {
 
 #text {
   position: absolute;
-  top: 20vh;
+  top: 10vw;
   margin: 0 auto;
   text-align: center;
   z-index: 12;
   
 
   #title {
-    font-size: 13vw;
+    font-size: 13.4vw;
     font-weight: 100;
     margin: 0;
   }
 
   #subtitle {
     font-size: 1.9vw;
-    font-weight: 200;
-    margin: 3vw 0;
+    font-weight: 300;
+    margin: 1vw 0;
   }
 
   #tag {
     font-size: 2.02vw;
-    font-weight: 200;
+    font-weight: 300;
     color: #A08DCA;
   }
 }
 
 #balloonicon {
   position: absolute;
-  top: 19vh;
+  top: 11vw;
   left: 38vw;
   z-index: 10;
 
@@ -272,6 +272,7 @@ export default {
     position: absolute;
     width: 12vw;
     z-index: 10;
+    max-width: none;
   }
 }
 
