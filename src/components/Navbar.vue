@@ -1,7 +1,17 @@
 <template>
   <div class="columns is-multiline navbar">
     <div class="column is-12 item" v-for="item in menuItem" :key="item.route">
-      <router-link :class="{'link': true, 'active': $route.path == item.route}" :to="item.route"><i :class="'icon-' + item.icon"></i></router-link>
+      <div class="columns is-gapless">
+        <div class="column"></div>
+        <transition name="fade">
+          <div v-if="$route.path != item.route && hovering == item.route" class="column is-narrow label">
+            <p>{{item.name}}</p>
+          </div>
+        </transition>
+        <div class="column is-narrow" @mouseover="hovering = item.route" @mouseleave="hovering = null">
+          <router-link :class="{'link': true, 'active': $route.path == item.route}" :to="item.route"><i :class="'icon-' + item.icon"></i></router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,10 +26,11 @@ export default {
       menuItem: [
         {name: 'Me', route: '/profile', icon: 'user'},
         {name: 'Education', route: '/education', icon: 'graduation'},
-        {name: 'Work Experience', route: '/work', icon: 'briefcase'},
+        {name: 'Work', route: '/work', icon: 'briefcase'},
         {name: 'Projects', route: '/projects', icon: 'rocket'},
         {name: 'Activities', route: '/activities', icon: 'puzzle'},
-      ]
+      ],
+      hovering: null,
     }
   },
   mounted() {
@@ -42,19 +53,41 @@ export default {
   text-align: right;
   margin: 150px 20px 0 0;
 
-  .link {
-    font-size: 2em;
-    text-decoration: none;
-    color: #d8d8d8;
+  .item {
+    .label {
+     display: flex;
+     justify-content: center;
 
-    &:hover {
-      color: #968cad;
+      p {
+        margin: auto 5px;
+        color: #968cad;
+      }
     }
 
-    &.active {
-      color: #5F537B;
+
+    .link {
+      font-size: 2em;
+      text-decoration: none;
+      color: #d8d8d8;
+
+      &:hover {
+        color: #968cad;
+      }
+
+      &.active {
+        color: #5F537B;
+      }
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: translateX(5px);
 }
 
 </style>
