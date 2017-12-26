@@ -15,8 +15,8 @@ export default {
 @import '../node_modules/bulma/sass/grid/columns.sass';
 @import '../node_modules/bulma/sass/base/_all.sass';
 
-$simple-line-font-path: '../node_modules/simple-line-icons/fonts/';
-@import '../node_modules/simple-line-icons/scss/simple-line-icons.scss';
+// $simple-line-font-path: '../node_modules/simple-line-icons/fonts/';
+// @import '../node_modules/simple-line-icons/scss/simple-line-icons.scss';
 
 body {
   margin: 0;
