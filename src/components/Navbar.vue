@@ -1,10 +1,11 @@
 <template>
-  <div class="columns is-multiline navbar">
-    <div class="column is-12 item" v-for="item in menuItem" :key="item.route">
+  <div class="columns is-mobile is-multiline navbar">
+    <div class="column is-12-tablet is-hidden-mobile offseter"></div>
+    <div class="column is-12-tablet item" v-for="item in menuItem" :key="item.route">
       <div class="columns is-gapless">
-        <div class="column"></div>
+        <div class="column is-hidden-mobile"></div>
         <transition name="fade">
-          <div v-if="$route.path != item.route && hovering == item.route" class="column is-narrow label">
+          <div v-if="$route.path != item.route && hovering == item.route" class="column is-narrow is-hidden-mobile label">
             <p>{{item.name}}</p>
           </div>
         </transition>
@@ -50,8 +51,12 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  text-align: right;
-  margin: 150px 20px 0 0;
+  text-align: center;
+  margin: 5px;
+
+  .offseter {
+    height: 130px;
+  }
 
   .item {
     .label {

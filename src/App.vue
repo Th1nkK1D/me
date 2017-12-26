@@ -12,8 +12,8 @@ export default {
 
 <style lang="scss">
 @import '../node_modules/bulma/sass/utilities/_all.sass';
-@import '../node_modules/bulma/sass/grid/_all.sass';
-@import '../node_modules/bulma/sass/layout/_all.sass';
+@import '../node_modules/bulma/sass/grid/columns.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
 
 body {
   margin: 0;
