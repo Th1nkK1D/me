@@ -39,7 +39,7 @@ function genPartical() {
   let uc = document.getElementById('balloonicon')
   let colors = ['#ab47bc','#5c6bc0','#29b6f6','#66bb6a','#ffee58','#ffa726','#ef5350']
   
-  for (let i = 0; i < 49; i++) {
+  for (let i = 0; i < 35; i++) {
     let p = document.createElement('div')
     p.style['background-color'] = colors[i%7]
     p.style['width'] = '1vw'
@@ -57,7 +57,7 @@ function genPartical() {
 function animatePartical(p,i) {
   anime({
     targets: p,
-    delay: () => i*8,
+    delay: () => i*10,
     translateX: () => anime.random(6,12)+'vw',
     translateY: () => anime.random(8,15)+'vw',
     duration: (t) => 1200,
@@ -96,7 +96,7 @@ function animateCloud(c) {
     targets: c,
     direction: 'alternate',
     delay: () => anime.random(0,1000),
-    translateY: () => anime.random(1,2)+'vw',
+    translateY: () => anime.random(1,2)+'vh',
     duration: 2000,
     loop: true,
     easing: 'easeInOutQuad',
