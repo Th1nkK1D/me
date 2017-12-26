@@ -3,10 +3,17 @@
     <h1 class="title layer">{{title}}</h1>
     <div class="timeline layer">
       <div class="card layer" v-for="(event,e) in data" :key="e">
-        <p class="time">{{event.time}}</p>
-        <p class="head"><strong class="title">{{event.head}}</strong> {{event.subhead}}</p>
-        <p><span v-for="(line,l) in event.text" :key="l">{{line}}<br></span></p>
-
+        <div class="columns is-gapless is-mobile">
+          <div class="column">
+            <p class="time">{{event.time}}</p>
+            <p class="head"><strong class="title">{{event.head}}</strong> {{event.subhead}}</p>
+            <p><span v-for="(line,l) in event.text" :key="l">{{line}}<br></span></p>
+          </div>
+          <div class="column is-narrow">
+            <i v-if="event.icon" :class="'icon-'+event.icon"></i>
+          </div>
+        </div>
+        
         <div class="spacer" v-if="e < data.length-1"></div>
       </div>
     </div>
@@ -60,7 +67,7 @@ export default {
       }
 
       .spacer {
-        height: 60px;
+        height: 30px;
       }
     }
   }
