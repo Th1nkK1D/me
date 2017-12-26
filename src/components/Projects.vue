@@ -21,13 +21,13 @@ export default {
           link: [{url:'http://timeable.me', icon:'share-alt'}]
         },
         {
-          time: '2017', head: "Dotabase", subhead: ', Dota 2 Game Database',
-          text: ['A project in Database and ERP system class, built with VueJS + Firebase.'],
+          time: '2017', head: "Dotabase", subhead: ', Dota 2 game database',
+          text: ['A group project in Database and ERP System class, built with VueJS + Firebase.'],
           link: [{url:'https://dotabase-fe206.firebaseapp.com/', icon:'share-alt'},{url:'https://github.com/Th1nkK1D/Dotabase', icon:'social-github'}]
         },
         {
           time: '2017', head: "EX the Game", subhead: ', an endless mobile game developed on Unity',
-          text: ['Start with a group of friends who interest in game developent, I was responsible in game design, art asset and animation using Blender.']
+          text: ['Start with a group of friends who interested in game development, I was responsible in game design, art assets and animation using Blender.']
         },
         {
           time: '2017', head: "Unicot", subhead: ', Discord music streaming bot with web UI',
@@ -36,12 +36,12 @@ export default {
         },
         {
           time: '2015', head: "Pseudo2C", subhead: ', pseudo-code to C converter',
-          text: ['A project in Algorithm and Data Structure class, all written in C language.'],
+          text: ['A group project in Algorithm and Data Structure class, all written in C language.'],
           link: [{url:'https://github.com/Th1nkK1D/pseudo2C', icon:'social-github'}]
         },
         {
           time: '2015', head: "Interactive Chessboard", subhead: ', a chessboard with LED movement hint',
-          text: ['A project in Computer Engineering Exploration class, using LED and switch matrix with Arduino.'],
+          text: ['A group project in Computer Engineering Exploration class, using LED and switch matrix with Arduino.'],
         },
         {
           time: '2014', head: "My Personal Blog", subhead: ', written from scratch using PHP + MySQL',

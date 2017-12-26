@@ -29,6 +29,13 @@
         </div>
       </div>
     </div><!-- end of bio -->
+
+    <h2 class="layer title">Hobbies</h2>
+    <div class="padder layer">
+      Coding - Reading - Drawing - Cycling - Playing Piano - Going for an adventure once in a while
+    </div>
+
+    <br>
     
     <h2 class="layer title">Skills</h2>
     <!-- skills -->
@@ -72,7 +79,7 @@ export default {
   data() {
     return {
       bio: [
-        {icon: 'direction', text: '17 Soi Panichayakarnthonburi 21, Jarunsamitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600', size: 11},
+        {icon: 'direction', text: '17 Soi Panichayakarnthonburi 21, Jarunsanitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600', size: 11},
         {icon: 'present', text: '13 Nov 1996', size: 4},
         {icon: 'phone', text: '+66 85 125 5278', size: 4},
         {icon: 'envelope-open', text: 'witheep@gmail.com', link: 'mailto:witheep@gmail.com', size: 4},
