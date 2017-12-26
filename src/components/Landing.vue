@@ -291,16 +291,17 @@ export default {
 
 #caret {
   position: absolute;
-  bottom: 180px;
+  bottom: 30px;
   z-index: 19;
 
   i {
-    font-size: 24px;
-    opacity: 0.5;
+    font-size: 28px;
+    color: #5F537B;
+    opacity: 1;
     cursor: pointer;
 
     &:hover {
-      opacity: 1;
+      opacity: 0.5;
     }
   }
 }
@@ -311,12 +312,12 @@ export default {
   
 
   &#cloud-far {
-    bottom: 25px;
+    bottom: 40px;
     z-index: 5;
   }
 
   &#cloud-close {
-    bottom: 10px;
+    bottom: 20px;
     z-index: 15;
   }
 }
