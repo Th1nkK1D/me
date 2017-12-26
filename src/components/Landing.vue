@@ -11,7 +11,7 @@
     </div>
 
     <div id="caret">
-      <img @click="go()" src="/static/svg/caret_down.min.svg"/>
+      <i class="icon-arrow-down" @click="go()"></i>
     </div>
 
     <div class="cloud" id="cloud-far"></div>
@@ -237,7 +237,7 @@ export default {
 
 #text {
   position: absolute;
-  top: 22vh;
+  top: 20vh;
   margin: 0 auto;
   text-align: center;
   z-index: 12;
@@ -264,7 +264,7 @@ export default {
 
 #balloonicon {
   position: absolute;
-  top: 21vh;
+  top: 19vh;
   left: 38vw;
   z-index: 10;
 
@@ -277,11 +277,11 @@ export default {
 
 #caret {
   position: absolute;
-  bottom: 25vh;
+  bottom: 220px;
+  z-index: 19;
 
-  img {
-    width: 40px;
-    height: auto;
+  i {
+    font-size: 24px;
     opacity: 0.5;
     cursor: pointer;
 
