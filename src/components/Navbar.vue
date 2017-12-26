@@ -5,7 +5,7 @@
       <div class="columns is-gapless">
         <div class="column is-hidden-mobile"></div>
         <transition name="fade">
-          <div v-if="$route.path != item.route && hovering == item.route" class="column is-narrow is-hidden-mobile label">
+          <div v-if="$route.path != item.route && hovering == item.route" class="column is-narrow is-hidden-touch label">
             <p>{{item.name}}</p>
           </div>
         </transition>
