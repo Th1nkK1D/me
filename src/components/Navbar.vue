@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       menuItem: [
+        {name: 'Levitate', route: '/', icon: 'cloud-upload'},
         {name: 'Me', route: '/profile', icon: 'user'},
         {name: 'Education', route: '/education', icon: 'graduation'},
         {name: 'Work', route: '/work', icon: 'briefcase'},
