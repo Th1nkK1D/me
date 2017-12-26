@@ -14,11 +14,15 @@
 
           <div class="columns is-gapless is-multiline">
             <div v-for="field in bio" :key="field.icon" :class="'column is-'+field.size">
-              <div class="padder">
-                <i v-if="field.icon" :class="'icon-'+field.icon"></i>
-                <img v-else :src="field.custom_icon" class="custom-icon">
-                <a v-if="field.link" :href="field.link" target="_blank">{{field.text}}</a>
-                <span v-else> {{field.text}}</span>
+              <div class="columns is-gapless is-mobile padder">
+                <div class="column is-narrow">
+                  <i v-if="field.icon" :class="'icon-'+field.icon"></i>
+                  <img v-else :src="field.custom_icon" class="custom-icon">
+                </div>
+                <div class="column">
+                  <a v-if="field.link" :href="field.link" target="_blank">{{field.text}}</a>
+                  <span v-else> {{field.text}}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -70,7 +74,7 @@ export default {
       bio: [
         {icon: 'direction', text: '17 Soi Panichayakarnthonburi 21, Jarunsamitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600', size: 11},
         {icon: 'present', text: '13 Nov 1996', size: 4},
-        {icon: 'phone', text: '(+66) 85 125 5278', size: 4},
+        {icon: 'phone', text: '+66 85 125 5278', size: 4},
         {icon: 'envelope-open', text: 'witheep@gmail.com', link: 'mailto:witheep@gmail.com', size: 4},
         {icon: 'social-facebook', text: 'Lookkid Withee Poositasai', link: 'https://www.facebook.com/Th1nkK1D', size: 4},
         {icon: 'social-github', text: 'Th1nkK1D', link: 'https://github.com/Th1nkK1D', size: 4},
@@ -136,21 +140,23 @@ export default {
     }
 
     a {
-      color: black;
+      color: #4a4a4a;
       text-decoration: none;
 
       &:hover {
-        color: #5F537B;
+        color: black;
       }
     }
 
     i {
       color: #968cad;
+      margin-right: 5px;
     }
 
     .custom-icon {
       height: 16px;
       width: auto;
+      margin-right: 5px;
     }
   }
 </style>
