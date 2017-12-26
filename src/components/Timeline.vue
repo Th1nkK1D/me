@@ -72,6 +72,7 @@ export default {
 
       .links {
         margin-top: 15px;
+        text-align: right;
 
         a {
           color: #d8d8d8;

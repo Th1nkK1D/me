@@ -16,12 +16,37 @@ export default {
     return {
       project: [
         {
-          time: "2017", head: "Timeable.me", subhead: ', Event date/time voting web platformg',
-          text: ['From frustration at not being able to find the best time for a meeting with a friend,',"I spent 2 years learning Javascript in my spare time, designing, prototyping, testing, and developing this project."],
-          link: [{url:'http://google.com', icon:'social-github'},{url:'http://google.com', icon:'link'}]
+          time: "2017", head: "Timeable.me", subhead: ', event date/time voting web platform',
+          text: ['From frustration at not being able to find the best time for a meeting with a friend,',"I spent 2 years learning Javascript with AngularJS in my spare time, designing, prototyping, testing, and developing this project."],
+          link: [{url:'http://timeable.me', icon:'share-alt'}]
         },
-        {time: '2017', head: "Unicot", subhead: ', Discord music streaming bot with web UI', text: ['This project started when my friend and I were struggling to Discord’s music bot with the text chat.']},
-        {time: '2014', head: "My Personal Blog", subhead: ', written from scratch using PHP + MySQL', text: ["With basic website knowledge from school, I start to dig deep into it with much curiosity."]},
+        {
+          time: '2017', head: "Dotabase", subhead: ', Dota 2 Game Database',
+          text: ['A project in Database and ERP system class, built with VueJS + Firebase.'],
+          link: [{url:'https://dotabase-fe206.firebaseapp.com/', icon:'share-alt'},{url:'https://github.com/Th1nkK1D/Dotabase', icon:'social-github'}]
+        },
+        {
+          time: '2017', head: "EX the Game", subhead: ', an endless mobile game developed on Unity',
+          text: ['Start with a group of friends who interest in game developent, I was responsible in game design, art asset and animation using Blender.']
+        },
+        {
+          time: '2017', head: "Unicot", subhead: ', Discord music streaming bot with web UI',
+          text: ['This project started when my friend and I were struggling to Discord’s music bot with the text chat.','Developed on AngularJS + Meteor.'],
+          link: [{url:'https://github.com/Th1nkK1D/unicot', icon:'social-github'}]
+        },
+        {
+          time: '2015', head: "Pseudo2C", subhead: ', pseudo-code to C converter',
+          text: ['A project in Algorithm and Data Structure class, all written in C language.'],
+          link: [{url:'https://github.com/Th1nkK1D/pseudo2C', icon:'social-github'}]
+        },
+        {
+          time: '2015', head: "Interactive Chessboard", subhead: ', a chessboard with LED movement hint',
+          text: ['A project in Computer Engineering Exploration class, using LED and switch matrix with Arduino.'],
+        },
+        {
+          time: '2014', head: "My Personal Blog", subhead: ', written from scratch using PHP + MySQL',
+          text: ["With basic website knowledge from school, I start to dig deep into it with much curiosity."]
+        },
       ]
     }
   }
