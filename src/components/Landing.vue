@@ -2,8 +2,17 @@
   <div id="stage">
     <div id="text">
       <h1 id="title"><span>L</span><span>O</span> &nbsp;&nbsp;&nbsp;&nbsp; <span>K</span><span>K</span><span>I</span><span>D</span></h1>
-      <h4 id="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
-      <h4 id="tag">#Web &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Technologies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Changemaker &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #SocialStartup</h4>
+      <div class="is-hidden-mobile">
+        <h4 class="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
+        <h4 class="tag">#Web &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Technologies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Changemaker &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #SocialStartup</h4>
+      </div>
+      
+      <div class="is-hidden-tablet">
+        <h4 class="subtitle" style="font-size:3.9vw">An optimistic 21 years old Thai youth,</h4>
+        <h4 class="subtitle" style="font-size:3.7vw">in love with integrating code and design.</h4>
+        <h4 class="tag" style="font-size:3.95vw">#Web &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Technologies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Design</h4>
+        <h4 class="tag" style="font-size:3.9vw">#Changemaker &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #SocialStartup</h4>
+      </div>
     </div>
 
     <div id="balloonicon">
@@ -62,7 +71,7 @@ function animatePartical(p,i) {
 function genCloud(parent,bg,offset) {
   let cl = document.getElementById(parent)
 
-  let cloudSize = 250
+  let cloudSize = 200
   let amount = Math.ceil(window.screen.availWidth*2/cloudSize)
   
   for (let i = 0; i < amount; i++) {
@@ -74,7 +83,7 @@ function genCloud(parent,bg,offset) {
     c.style['height'] = rand+'px'
     c.style['position'] = 'absolute'
     c.style['bottom'] = -rand/2+'px'
-    c.style['left'] = i*175 - rand/2 + anime.random(-20,20) + offset + 'px'
+    c.style['left'] = i*175 - rand/2 + anime.random(-cloudSize/25,cloudSize/25) + offset + 'px'
     c.style['border-radius'] = '50%'
     c.style['z-index'] = 20
     cl.appendChild(c)
@@ -142,7 +151,7 @@ export default {
       .add({
         // Unicon in
         targets: '#balloonicon',
-        translateY: ['90vh',0],
+        translateY: ['100vh',0],
         translateX: ['40vw',0],
         duration: 3000,
         elasticity: 200,
@@ -160,14 +169,14 @@ export default {
       })
       .add({
         // Subtitle in
-        targets: '#subtitle',
+        targets: '.subtitle',
         opacity: [0,1],
         duration: 3000,
         offset: 5000
       })
       .add({
         // Tag in
-        targets: '#tag',
+        targets: '.tag',
         opacity: [0,1],
         duration: 3000,
         offset: 5500
@@ -182,7 +191,7 @@ export default {
       })
       .add({
         // Text out
-        targets: ['#caret','#subtitle','#title','#tag'],
+        targets: ['#caret','.subtitle','#title','.tag'],
         opacity: 0,
         duration: 3000,
         offset: 7500,
@@ -237,7 +246,7 @@ export default {
 
 #text {
   position: absolute;
-  top: 10vw;
+  top: calc((50vh - 100px)/2);
   margin: 0 auto;
   text-align: center;
   z-index: 12;
@@ -249,13 +258,17 @@ export default {
     margin: 0;
   }
 
-  #subtitle {
+  .subtitle {
     font-size: 1.9vw;
     font-weight: 300;
     margin: 1vw 0;
+
+    &.mobile {
+      font-size: 2.8vw;
+    }
   }
 
-  #tag {
+  .tag {
     font-size: 2.02vw;
     font-weight: 300;
     color: #A08DCA;
@@ -264,7 +277,7 @@ export default {
 
 #balloonicon {
   position: absolute;
-  top: 11vw;
+  top: calc((50vh - 100px)/2 + 1vw);
   left: 38vw;
   z-index: 10;
 
@@ -278,7 +291,7 @@ export default {
 
 #caret {
   position: absolute;
-  bottom: 220px;
+  bottom: 180px;
   z-index: 19;
 
   i {
