@@ -82,16 +82,16 @@ export default {
           size: 6,
           column: 2,
           skill: [
-            {label: 'HTML', value: '11'},
-            {label: 'CSS + SASS', value: '10'},
-            {label: 'Javascript', value: '8'},
-            {label: 'VueJS', value: '6'},
-            {label: 'Angular', value: '5'},
-            {label: 'PHP', value: '5'},
-            {label: 'Ruby', value: '6'},
-            {label: 'Python', value: '4'},
-            {label: 'R', value: '4'},
-            {label: 'C', value: '7'},
+            {label: 'HTML', value: '90'},
+            {label: 'CSS + SASS', value: '75'},
+            {label: 'Javascript', value: '65'},
+            {label: 'VueJS', value: '60'},
+            {label: 'Angular', value: '50'},
+            {label: 'PHP', value: '45'},
+            {label: 'Ruby', value: '50'},
+            {label: 'Python', value: '40'},
+            {label: 'R', value: '40'},
+            {label: 'C', value: '65'},
           ]
         },
         {
@@ -99,20 +99,20 @@ export default {
           size: null,
           column: 1,
           skill: [
-            {label: 'Sketch', value: '5'},
-            {label: 'XD', value: '7'},
-            {label: 'Illustrator', value: '6'},
-            {label: 'Photoshop', value: '5'},
-            {label: 'After Effect', value: '3'},
+            {label: 'Sketch', value: '45'},
+            {label: 'XD', value: '60'},
+            {label: 'Illustrator', value: '50'},
+            {label: 'Photoshop', value: '45'},
+            {label: 'After Effect', value: '30'},
           ]
         },
         {
-          name: 'Communication',
+          name: 'Languages',
           size: null,
           column: 1,
           skill: [
-            {label: 'Thai', value: '12'},
-            {label: 'English', value: '9'},
+            {label: 'Thai', value: '95'},
+            {label: 'English', value: '80'},
           ]
         }
       ]
