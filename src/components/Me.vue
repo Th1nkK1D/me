@@ -12,8 +12,8 @@
         <div class="padder">
           <h3 class="name">Withee Poositasai</h3>
 
-          <div class="columns is-gapless is-multiline">
-            <div v-for="field in bio" :key="field.icon" :class="'column is-'+field.size">
+          <div class="columns is-gapless is-multiline is-desktop">
+            <div v-for="field in bio" :key="field.icon" :class="'column is-'+field.size+'-desktop'">
               <div class="columns is-gapless is-mobile padder">
                 <div class="column is-narrow">
                   <i v-if="field.icon" :class="'icon-'+field.icon"></i>
@@ -38,14 +38,17 @@
     <br>
     
     <h2 class="layer title">Skills</h2>
+    <div class="padder layer">
+      My comfortable level and years of experience
+    </div>
     <!-- skills -->
-    <div class="columns is-gapless layer">
-      <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size">
+    <div class="columns is-gapless is-desktop layer">
+      <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size + '-desktop'">
         <div class="padder">
           <h3>{{cat.name}}</h3>
-          <div class="columns is-gapless is-multiline">
-            <div v-for="skill in cat.skill" :key="skill.label" :class="'column is-' + 12/cat.column">
-              <div class="padder"><skillbar :label="skill.label" :value="skill.value"></skillbar></div> 
+          <div class="columns is-gapless is-multiline is-desktop">
+            <div v-for="skill in cat.skill" :key="skill.label" :class="'column is-' + 12/cat.column + '-desktop'">
+              <div class="padder"><skillbar :label="skill.label" :value="skill.value" :desc="skill.desc"></skillbar></div> 
             </div>
           </div>
         </div>
@@ -93,16 +96,16 @@ export default {
           size: 6,
           column: 2,
           skill: [
-            {label: 'HTML', value: '90'},
-            {label: 'CSS + SASS', value: '75'},
-            {label: 'Javascript', value: '65'},
-            {label: 'VueJS', value: '60'},
-            {label: 'Angular', value: '50'},
-            {label: 'PHP', value: '45'},
-            {label: 'Ruby', value: '50'},
-            {label: 'Python', value: '40'},
-            {label: 'R', value: '40'},
-            {label: 'C', value: '65'},
+            {label: 'HTML', value: '90', desc: '4 years'},
+            {label: 'CSS + SASS', value: '75', desc: '4 years'},
+            {label: 'Javascript', value: '65', desc: '3 years'},
+            {label: 'VueJS', value: '60', desc: '< 1 year'},
+            {label: 'Angular', value: '50', desc: '< 1 year'},
+            {label: 'PHP', value: '45', desc: '3 years'},
+            {label: 'Ruby', value: '50', desc: '< 1 year'},
+            {label: 'Python', value: '40', desc: '< 1 year'},
+            {label: 'R', value: '40', desc: '< 1 year'},
+            {label: 'C', value: '65', desc: '5 years'},
           ]
         },
         {
@@ -110,11 +113,11 @@ export default {
           size: null,
           column: 1,
           skill: [
-            {label: 'Sketch', value: '45'},
-            {label: 'XD', value: '60'},
-            {label: 'Illustrator', value: '50'},
-            {label: 'Photoshop', value: '45'},
-            {label: 'After Effect', value: '30'},
+            {label: 'Sketch', value: '45', desc: '1 year'},
+            {label: 'XD', value: '60', desc: '< 1 year'},
+            {label: 'Illustrator', value: '50', desc: '6 years'},
+            {label: 'Photoshop', value: '45', desc: '6 years'},
+            {label: 'After Effect', value: '30', desc: '< 1 year'},
           ]
         },
         {
@@ -122,8 +125,8 @@ export default {
           size: null,
           column: 1,
           skill: [
-            {label: 'Thai', value: '95'},
-            {label: 'English', value: '80'},
+            {label: 'Thai', value: '95', desc: 'Native'},
+            {label: 'English', value: '80', desc: 'TOEIC 830'},
           ]
         }
       ]

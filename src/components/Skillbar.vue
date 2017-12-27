@@ -1,6 +1,9 @@
 <template>
   <div>
-    <span>{{label}}</span>
+    <div class="columns is-gapless is-mobile text">
+      <div class="column">{{label}}</div>
+      <div class="column is-narrow desc">{{desc}}</div>
+    </div>
     <div class="bar">
       <div class="scale" :id="label.slice(0,3)"></div>
     </div>
@@ -12,7 +15,7 @@ import anime from 'animejs'
   
 export default {
   name: 'Skillbar',
-  props: ['label','value'],
+  props: ['label','value','desc'],
   data() {
     return {
       animValue: 0
@@ -27,6 +30,7 @@ export default {
       duration: 2000,
       loop: false,
       autoplay: true,
+      delay: 500,
       easing: 'easeInOutQuad',
     });
   }
@@ -34,8 +38,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  span {
+  .columns {
+    margin: 0 0 3px 0 !important;
+  }
+
+  .text {
     font-size: 12px;
+
+    .desc {
+      color: #919191;
+    }
   }
 
   .bar {
