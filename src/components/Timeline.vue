@@ -75,13 +75,13 @@ export default {
         text-align: right;
 
         a {
-          color: #d8d8d8;
+          color: #968cad;
           text-decoration: none;
           margin-right: 5px;
           font-size: 20px;
 
           &:hover {
-            color: #968cad;
+            color: #d8d8d8;
           }
         }
       }
