@@ -100,12 +100,13 @@ export default {
             {label: 'CSS + SASS', value: '75', desc: '4 years'},
             {label: 'Javascript', value: '65', desc: '3 years'},
             {label: 'VueJS', value: '60', desc: '< 1 year'},
-            {label: 'Angular', value: '50', desc: '< 1 year'},
-            {label: 'PHP', value: '45', desc: '3 years'},
+            {label: 'Angular', value: '60', desc: '< 1 year'},
+            {label: 'Go', value: '50', desc: '< 1 year'},
             {label: 'Ruby', value: '50', desc: '< 1 year'},
+            {label: 'PHP', value: '40', desc: '3 years'},
             {label: 'Python', value: '40', desc: '< 1 year'},
             {label: 'R', value: '40', desc: '< 1 year'},
-            {label: 'C', value: '65', desc: '5 years'},
+            {label: 'C', value: '40', desc: '5 years'},
           ]
         },
         {
@@ -113,7 +114,7 @@ export default {
           size: null,
           column: 1,
           skill: [
-            {label: 'Sketch', value: '45', desc: '1 year'},
+            {label: 'Sketch', value: '65', desc: '1 year'},
             {label: 'XD', value: '60', desc: '< 1 year'},
             {label: 'Illustrator', value: '50', desc: '6 years'},
             {label: 'Photoshop', value: '45', desc: '6 years'},

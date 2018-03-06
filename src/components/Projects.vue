@@ -16,6 +16,11 @@ export default {
     return {
       project: [
         {
+          time: "2018", head: "gOCR", subhead: ', OCR implementation with Golang',
+          text: ['Mainly focus on Thai language and tested with some Thai characters, English characters and Arabic digits',"Simple Thai OCR Project, CPE489 Image Processing and Computer Vision, KMUTT"],
+          link: [{url:'https://github.com/Th1nkK1D/gocr', icon:'social-github'}]
+        },
+        {
           time: "2017", head: "Timeable.me", subhead: ', event date/time voting web platform',
           text: ['From frustration at not being able to find the best time for a meeting with a friend,',"I spent 2 years learning Javascript with AngularJS in my spare time, designing, prototyping, testing, and developing this project."],
           link: [{url:'http://timeable.me', icon:'share-alt'}]
