@@ -5,6 +5,11 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+// Force reload on top
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0)
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

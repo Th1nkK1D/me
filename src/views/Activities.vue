@@ -1,6 +1,6 @@
 <template>
   <div>
-    <timeline title="Activities" :data="activity"></timeline>
+    <timeline title="Activities" :data="activity" ref="Timeline"></timeline>
   </div>
 </template>
 

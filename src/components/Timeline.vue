@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 class="title layer">{{title}}</h1>
-    <div class="timeline layer">
-      <div class="card layer" v-for="(event,e) in data" :key="e">
+    <h1 :class="'title layer layer-'+layerClass">{{title}}</h1>
+    <div :class="'timeline layer layer-'+layerClass">
+      <div :class="'card layer layer-'+layerClass" v-for="(event,e) in data" :key="e">
         <div class="columns is-gapless">
           <div class="column">
             <p class="time">{{event.time}}</p>
@@ -30,18 +30,33 @@ import anime from 'animejs'
 export default {
   name: 'Timeline',
   props: ['title','data'],
+  computed: {
+    layerClass() {
+      return this.title.slice(0,2).toLowerCase()
+    }
+  },
   mounted() {
-    anime({
-      targets: '.layer',
-      direction: 'normal',
-      translateY: ['10vw',0],
-      opacity: [0,1],
-      duration: 1500,
-      delay: (el,i) => i*100,
-      loop: false,
-      easing: 'easeOutQuad',
+    this.$once('onEnter', () => {
+      anime.timeline({
+        loop: false,
+        easing: 'easeOutQuad',
+      })
+      .add({
+        targets: '.stage',
+        direction: 'normal',
+        opacity: [0,1],
+        duration: 1,
+      })
+      .add({
+        targets: '.layer-'+this.layerClass,
+        direction: 'normal',
+        translateY: ['10vw',0],
+        opacity: [0,1],
+        duration: 1500,
+        delay: (el,i) => i*100,
+      })
     })
-  }
+  },
 }
 </script>
 

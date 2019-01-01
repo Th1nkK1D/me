@@ -1,6 +1,6 @@
 <template>
   <div>
-    <timeline title="WORK EXPERIENCE" :data="work"></timeline>
+    <timeline title="WORK EXPERIENCE" :data="work" ref="Timeline"></timeline>
   </div>
 </template>
 

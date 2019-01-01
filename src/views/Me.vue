@@ -1,8 +1,8 @@
 <template>
-  <div class="stage">
-    <h1 class="title layer">ME</h1>
+  <div>
+    <h1 class="title layer layer-me">ME</h1>
     <!-- bio -->
-    <div class="columns is-gapless layer bio">
+    <div class="columns is-gapless layer layer-me bio">
       <div class="column is-narrow">
         <div class="padder">
           <img src="/static/img/lkavatar.jpg" alt="" class="avatar">
@@ -30,19 +30,19 @@
       </div>
     </div><!-- end of bio -->
 
-    <h2 class="layer title">Hobbies</h2>
-    <div class="padder layer">
+    <h2 class="layer layer-me title">Hobbies</h2>
+    <div class="padder layer layer-me">
       Coding - Reading - Drawing - Cycling - Playing Piano - Going for an adventure once in a while
     </div>
 
     <br>
     
-    <h2 class="layer title">Skills</h2>
-    <div class="padder layer">
+    <h2 class="layer layer-me title">Skills</h2>
+    <div class="padder layer layer-me">
       My comfortable level and years of experience
     </div>
     <!-- skills -->
-    <div class="columns is-gapless is-desktop layer">
+    <div class="columns is-gapless is-desktop layer layer-me">
       <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size + '-desktop'">
         <div class="padder">
           <h3>{{cat.name}}</h3>
@@ -74,13 +74,7 @@ export default {
         easing: 'easeOutQuad',
       })
       .add({
-        targets: '.stage',
-        direction: 'normal',
-        opacity: [0,1],
-        duration: 1,
-      })
-      .add({
-        targets: '.layer',
+        targets: '.layer-me',
         direction: 'normal',
         translateY: ['10vw',0],
         opacity: [0,1],

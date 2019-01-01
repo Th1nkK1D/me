@@ -6,16 +6,16 @@
         <Me ref="MeComponent" />
       </Profile>
       <Profile>
-        <Education />
+        <Education ref="EducationComponent" />
       </Profile>
       <Profile>
-        <Work />
+        <Work ref="WorkComponent" />
       </Profile>
       <Profile>
-        <Projects />
+        <Projects ref="ProjectsComponent" />
       </Profile>
       <Profile>
-        <Activities />
+        <Activities ref="ActivitiesComponent" />
       </Profile>
     </Scrollama>
   </div>
@@ -26,12 +26,12 @@ import 'intersection-observer' // for cross-browser support
 import Scrollama from 'vue-scrollama'
 
 import Landing from '@/views/Landing'
+import Profile from '@/components/Profile'
 import Me from '@/views/Me'
 import Education from '@/views/Education'
 import Work from '@/views/Work'
 import Projects from '@/views/Projects'
 import Activities from '@/views/Activities'
-import Profile from '@/components/Profile'
 
 export default {
   name: 'app',
@@ -47,13 +47,25 @@ export default {
   },
   methods: {
     stepEnterHandler ({element, index, direction}) {
-      console.log('enter', index, direction)
+      // console.log('enter', index, direction)
       if (index === 0) {
         this.$refs.LandingComponent.$emit('onEnter')
       } else if (direction === 'down') {
         switch (index) {
           case 1:
             this.$refs.MeComponent.$emit('onEnter')
+            break;
+          case 2:
+            this.$refs.EducationComponent.$refs.Timeline.$emit('onEnter')
+            break;
+          case 3:
+            this.$refs.WorkComponent.$refs.Timeline.$emit('onEnter')
+            break;
+          case 4:
+            this.$refs.ProjectsComponent.$refs.Timeline.$emit('onEnter')
+            break;
+          case 5:
+            this.$refs.ActivitiesComponent.$refs.Timeline.$emit('onEnter')
             break;
         }
       }
@@ -72,7 +84,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.stage {
+.layer {
   opacity: 0;
 }
 </style>
