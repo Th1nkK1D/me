@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="stage">
     <h1 class="title layer">ME</h1>
     <!-- bio -->
     <div class="columns is-gapless layer bio">
@@ -68,15 +68,25 @@ export default {
     Skillbar
   },
   mounted() {
-    anime({
-      targets: '.layer',
-      direction: 'normal',
-      translateY: ['10vw',0],
-      opacity: [0,1],
-      duration: 1500,
-      delay: (el,i) => i*100,
-      loop: false,
-      easing: 'easeOutQuad',
+    this.$once('onEnter', () => {
+      anime.timeline({
+        loop: false,
+        easing: 'easeOutQuad',
+      })
+      .add({
+        targets: '.stage',
+        direction: 'normal',
+        opacity: [0,1],
+        duration: 1,
+      })
+      .add({
+        targets: '.layer',
+        direction: 'normal',
+        translateY: ['10vw',0],
+        opacity: [0,1],
+        duration: 1500,
+        delay: (el,i) => i*100,
+      })
     })
   },
   data() {

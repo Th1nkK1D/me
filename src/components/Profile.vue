@@ -2,23 +2,23 @@
   <div class="container is-fluid">
     <div class="columns is-gapless wrapper">
       <div class="column is-2-tablet is-12-mobile nav">
-        <navbar></navbar>
+        <!-- <navbar></navbar> -->
       </div>
       <div class="column is-2-tablet is-12-mobile"></div>
       <div class="column">
         <div class="padder">
-          <router-view></router-view>
+          <slot></slot>
         </div>    
       </div>
       <div class="column is-1"></div>
     </div>
-    <div class="footer">
+    <!-- <div class="footer">
       <p>
         <a href="https://github.com/Th1nkK1D/me" target="_blank">
           Crafted with <i class="icon-heart"></i> by Th1nkK1D
         </a>
       </p>
-    </div>
+    </div> -->
   </div>
 </template>
 
