@@ -13,9 +13,10 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "bulma": "^0.6.1",
+    "intersection-observer": "^0.5.1",
     "simple-line-icons": "^2.4.1",
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue": "^2.5.21",
+    "vue-scrollama": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

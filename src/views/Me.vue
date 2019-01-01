@@ -60,7 +60,7 @@
 
 <script>
 import anime from 'animejs'
-import Skillbar from './Skillbar'
+import Skillbar from '@/components/Skillbar'
 
 export default {
   name: 'Me',

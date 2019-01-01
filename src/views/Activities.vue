@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Timeline from './Timeline'
+import Timeline from '@/components/Timeline'
 
 export default {
   name: 'Activities',

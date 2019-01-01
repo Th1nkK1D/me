@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Landing />
   </div>
 </template>
 
 <script>
+import Landing from '@/views/Landing'
+import Me from '@/views/Me'
+import Education from '@/views/Education'
+import Work from '@/views/Work'
+import Projects from '@/views/Projects'
+import Activities from '@/views/Activities'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Landing,
+    Me
+  }
 }
 </script>
 
@@ -14,9 +25,6 @@ export default {
 @import '../node_modules/bulma/sass/utilities/_all.sass';
 @import '../node_modules/bulma/sass/grid/columns.sass';
 @import '../node_modules/bulma/sass/base/_all.sass';
-
-// $simple-line-font-path: '../node_modules/simple-line-icons/fonts/';
-// @import '../node_modules/simple-line-icons/scss/simple-line-icons.scss';
 
 body {
   margin: 0;
