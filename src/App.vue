@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-      <Scrollama @step-enter="stepEnterHandler" @step-exit="stepExitHandler" >
-        <Landing ref="LandingComponent" />
-        <Profile>
-          <Me ref="MeComponent" />
-        </Profile>
-        <Profile>
-          <Education />
-        </Profile>
-        <Profile>
-          <Work />
-        </Profile>
-        <Profile>
-          <Projects />
-        </Profile>
-        <Profile>
-          <Activities />
-        </Profile>
-      </Scrollama>
+    <Scrollama @step-enter="stepEnterHandler">
+      <Landing ref="LandingComponent" />
+      <Profile>
+        <Me ref="MeComponent" />
+      </Profile>
+      <Profile>
+        <Education />
+      </Profile>
+      <Profile>
+        <Work />
+      </Profile>
+      <Profile>
+        <Projects />
+      </Profile>
+      <Profile>
+        <Activities />
+      </Profile>
+    </Scrollama>
   </div>
 </template>
 
@@ -47,17 +47,16 @@ export default {
   },
   methods: {
     stepEnterHandler ({element, index, direction}) {
-      // console.log('enter', index, direction)
-      if (direction === 'down') {
+      console.log('enter', index, direction)
+      if (index === 0) {
+        this.$refs.LandingComponent.$emit('onEnter')
+      } else if (direction === 'down') {
         switch (index) {
           case 1:
             this.$refs.MeComponent.$emit('onEnter')
             break;
         }
       }
-    },
-    stepExitHandler ({element, index, direction}) {
-      // console.log('exit', index, direction)
     }
   }
 }

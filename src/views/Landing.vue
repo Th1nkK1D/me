@@ -106,17 +106,6 @@ function animateCloud(c) {
 export default {
   name: 'Landing',
   mounted() {
-    // Init timeline
-    timeline = anime.timeline({
-      direction: 'normal',
-      autoplay: true,
-      begin: () => {
-        genCloud('cloud-far','#CBC2DF',-75)
-        genCloud('cloud-close','white',0)
-        genPartical()
-      }
-    });
-
     // Init unicorn
     unicon = anime({
       targets: '#unicorn',
@@ -127,108 +116,114 @@ export default {
       loop: true,
       easing: 'easeInOutQuad',
       
-    });
+    })
 
-    // Play timeline
-    timeline
-      .add({
-          // Cloud in
-          targets: '#stage',
-          opacity: [0,1],
-          duration: 500,
-          easing: 'easeInOutQuad',
-        })
-      .add({
-        // Cloud in
-        targets: '.cloud',
-        opacity: [0,1],
-        translateY: ['10vh',0],
-        duration: 2000,
-        easing: 'easeInOutQuad',
-        offset: 500,
-        delay: (el,i) => i*500,
+    // Init timeline
+    timeline = anime.timeline({
+      direction: 'normal',
+      autoplay: false,
+      begin: () => {
+        genCloud('cloud-far','#CBC2DF',-75)
+        genCloud('cloud-close','white',0)
+        genPartical()
+      }
+    })
+    .add({
+      // Cloud in
+      targets: '#stage',
+      opacity: [0,1],
+      duration: 500,
+      easing: 'easeInOutQuad',
       })
-      .add({
-        // Unicon in
-        targets: '#balloonicon',
-        translateY: ['100vh',0],
-        translateX: ['40vw',0],
-        duration: 3000,
-        elasticity: 200,
-        easing: 'easeInOutElastic',
-        offset: 1000,
-        complete: () => unicon.play()
-      })
-      .add({
-        // Title in
-        targets: 'span',
-        opacity: [0,1],
-        duration: 8000,
-        delay: () => anime.random(0,1000),
-        offset: 4000
-      })
-      .add({
-        // Subtitle in
-        targets: '.subtitle',
-        opacity: [0,1],
-        duration: 3000,
-        offset: 5000
-      })
-      .add({
-        // Tag in
-        targets: '.tag',
-        opacity: [0,1],
-        duration: 3000,
-        offset: 5500
-      })
-      .add({
-        // Caret in
-        targets: '#caret',
-        opacity: [0,1],
-        duration: 1000,
-        offset: 6000,
-        complete: () => timeline.pause()
-      })
-      .add({
-        // Text out
-        targets: ['#caret','.subtitle','#title','.tag'],
-        opacity: 0,
-        duration: 3000,
-        offset: 7500,
-      })
-      .add({
-        // Unicon out
-        targets: '#balloonicon',
-        translateY: '-90vh',
-        translateX: '-40vw',
-        duration: 3000,
-        elasticity: 200,
-        easing: 'easeInOutElastic',
-        offset: 8000,
-        begin: () => unicon.pause()
-      })
-      .add({
-        // Far Cloud out
-        targets: '#cloud-far',
-        opacity: 0,
-        translateY: '5vh',
-        duration: 3000,
-        offset: 9000
-      })
-      .add({
-        // Stage out
-        targets: '#stage',
-        translateY: '-100vh',
-        duration: 600,
-        easing: 'easeInQuad',
-        offset: 9000,
-        complete: () => this.$router.push('profile')
-      })
-  },
-  methods: {
-    go() {
+    .add({
+      // Cloud in
+      targets: '.cloud',
+      opacity: [0,1],
+      translateY: ['10vh',0],
+      duration: 2000,
+      easing: 'easeInOutQuad',
+      offset: 500,
+      delay: (el,i) => i*500,
+    })
+    .add({
+      // Unicon in
+      targets: '#balloonicon',
+      translateY: ['100vh',0],
+      translateX: ['40vw',0],
+      duration: 3000,
+      elasticity: 200,
+      easing: 'easeInOutElastic',
+      offset: 1000,
+      complete: () => unicon.play()
+    })
+    .add({
+      // Title in
+      targets: 'span',
+      opacity: [0,1],
+      duration: 8000,
+      delay: () => anime.random(0,1000),
+      offset: 4000
+    })
+    .add({
+      // Subtitle in
+      targets: '.subtitle',
+      opacity: [0,1],
+      duration: 3000,
+      offset: 5000
+    })
+    .add({
+      // Tag in
+      targets: '.tag',
+      opacity: [0,1],
+      duration: 3000,
+      offset: 5500
+    })
+    .add({
+      // Caret in
+      targets: '#caret',
+      opacity: [0,1],
+      duration: 1000,
+      offset: 6000,
+    })
+    // .add({
+    //   // Text out
+    //   targets: ['#caret','.subtitle','#title','.tag'],
+    //   opacity: 0,
+    //   duration: 3000,
+    //   offset: 7500,
+    // })
+    // .add({
+    //   // Unicon out
+    //   targets: '#balloonicon',
+    //   translateY: '-90vh',
+    //   translateX: '-40vw',
+    //   duration: 3000,
+    //   elasticity: 200,
+    //   easing: 'easeInOutElastic',
+    //   offset: 8000,
+    //   begin: () => unicon.pause()
+    // })
+    // .add({
+    //   // Far Cloud out
+    //   targets: '#cloud-far',
+    //   opacity: 0,
+    //   translateY: '5vh',
+    //   duration: 3000,
+    //   offset: 9000
+    // })
+    // .add({
+    //   // Stage out
+    //   targets: '#stage',
+    //   translateY: '-100vh',
+    //   duration: 600,
+    //   easing: 'easeInQuad',
+    //   offset: 9000
+    // })    
+
+    // Attach event listener
+    this.$once('onEnter', () => {
       timeline.play()
-    }
+    })
   }
 }
 </script>
