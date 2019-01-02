@@ -1,5 +1,6 @@
 <template>
-  <div class="columns is-multiline navbar nav-desktop">
+  <div class="columns is-mobile is-multiline navbar nav-desktop">
+    <div class="column is-12-tablet is-hidden-mobile offseter"></div>
     <div class="column is-12-tablet item" v-for="(item, i) in menuItem" :key="item.route">
       <div class="columns is-gapless">
         <div class="column is-hidden-mobile"></div>
@@ -42,11 +43,13 @@ export default {
       direction: 'normal',
       loop: false,
       autoplay: false,
+      easing: 'easeOutQuad',
     })
     .add({
       targets: '.navbar',
       opacity: [0,1],
-      duration: 1,
+      translateY: ['70px',0],
+      duration: 500,
     })
     .add({
       targets: '.item',
@@ -54,7 +57,6 @@ export default {
       opacity: [0,1],
       duration: 1000,
       delay: (el,i) => i*200,
-      easing: 'easeOutQuad',
     })
 
     this.$on('onEnter', () => {
@@ -73,15 +75,20 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   text-align: center;
-  margin: 5px;
+  margin: 0;
   position: fixed;
   left: 0;
   opacity: 0;
   z-index: 100;
+  top: 20vh;
+  width: 15vw;
 
-  &.nav-desktop {
-    top: 20vh;
-    width: 15vw;
+  @media (max-width: 768px) {
+    top: unset;
+    bottom: 0;
+    width: 100vw;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px;
   }
 
   .item {
@@ -97,7 +104,7 @@ export default {
 
 
     .link {
-      font-size: 2em;
+      font-size: 1.8em;
       text-decoration: none;
       color: #d8d8d8;
 

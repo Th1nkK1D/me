@@ -58,7 +58,6 @@ export default {
     stepEnterHandler ({element, index, direction}) {
       // console.log('enter', index, direction)
       this.activeStage = index
-      console.log(this.activeStage)
 
       if (direction === 'down') {
         switch (index) {
