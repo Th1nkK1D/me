@@ -110,6 +110,8 @@ export default {
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .layer {
