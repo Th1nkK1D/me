@@ -5,7 +5,10 @@
       <div class="column is-narrow desc">{{desc}}</div>
     </div>
     <div class="bar">
-      <div class="scale" :id="label.slice(0,3)"></div>
+      <div class="scale" :id="this.label.slice(0,3)"></div>
+      <div class="indicator" style="left: 25%"></div>
+      <div class="indicator" style="left: 50%"></div>
+      <div class="indicator" style="left: 75%"></div>
     </div>
   </div>
 </template>
@@ -22,17 +25,18 @@ export default {
     }
   },
   mounted() {
-    anime({
-      targets: '#'+this.label.slice(0,3),
-      direction: 'normal',
-      width: ['0%',this.value+'%'],
-      round: 1,
-      duration: 2000,
-      loop: false,
-      autoplay: true,
-      delay: 500,
-      easing: 'easeInOutQuad',
-    });
+    this.$parent.$on('activateSkill', () => {
+      anime({
+        targets: '#'+this.label.slice(0,3),
+        direction: 'normal',
+        width: ['0%',this.value*25+'%'],
+        round: 1,
+        duration: 2000,
+        loop: false,
+        autoplay: true,
+        easing: 'easeInOutQuad',
+      })
+    })
   }
 }
 </script>
@@ -54,10 +58,20 @@ export default {
     height: 1px;
     margin-top: 3px;
     background-color: #D8D8D8;
+    position: relative;
 
     .scale {
       height: 100%;
+      width: 0%;
       background-color: #5F537B;
+    }
+
+    .indicator {
+      height: 1px;
+      width: 3px;
+      background-color: white;
+      position: absolute;
+      top: 0;
     }
   }
 </style>

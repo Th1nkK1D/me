@@ -38,9 +38,6 @@
     <br>
     
     <h2 class="layer layer-me title">Skills</h2>
-    <div class="padder layer layer-me">
-      My comfortable level and years of experience
-    </div>
     <!-- skills -->
     <div class="columns is-gapless is-desktop layer layer-me">
       <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size + '-desktop'">
@@ -80,6 +77,7 @@ export default {
         opacity: [0,1],
         duration: 1500,
         delay: (el,i) => i*100,
+        complete: () => this.$emit('activateSkill')
       })
     })
   },
@@ -100,17 +98,18 @@ export default {
           size: 6,
           column: 2,
           skill: [
-            {label: 'HTML', value: '90', desc: '4 years'},
-            {label: 'CSS + SASS', value: '75', desc: '4 years'},
-            {label: 'Javascript', value: '65', desc: '3 years'},
-            {label: 'VueJS', value: '60', desc: '< 1 year'},
-            {label: 'Angular', value: '60', desc: '< 1 year'},
-            {label: 'Go', value: '50', desc: '< 1 year'},
-            {label: 'Ruby', value: '50', desc: '< 1 year'},
-            {label: 'PHP', value: '40', desc: '3 years'},
-            {label: 'Python', value: '40', desc: '< 1 year'},
-            {label: 'R', value: '40', desc: '< 1 year'},
-            {label: 'C', value: '40', desc: '5 years'},
+            {label: 'HTML', value: '3', desc: 'Use for work'},
+            {label: 'CSS + SASS', value: '3', desc: 'Use for work'},
+            {label: 'Javascript', value: '3', desc: 'Use for work'},
+            {label: 'VueJS 2', value: '3', desc: 'Use quite often'},
+            {label: 'React', value: '2', desc: 'Internship require'},
+            {label: 'Angular 4', value: '2', desc: 'Some work require'},
+            {label: 'Go', value: '2', desc: 'Use for some project'},
+            {label: 'Python', value: '2', desc: 'Use for some project'},
+            {label: 'Ruby', value: '1', desc: 'Rarely use now'},
+            {label: 'PHP', value: '1', desc: 'Rarely use now'},
+            {label: 'R', value: '1', desc: 'Rarely use now'},
+            {label: 'C', value: '1', desc: 'Rarely use now'},
           ]
         },
         {
@@ -118,11 +117,12 @@ export default {
           size: null,
           column: 1,
           skill: [
-            {label: 'Sketch', value: '65', desc: '1 year'},
-            {label: 'XD', value: '60', desc: '< 1 year'},
-            {label: 'Illustrator', value: '50', desc: '6 years'},
-            {label: 'Photoshop', value: '45', desc: '6 years'},
-            {label: 'After Effect', value: '30', desc: '< 1 year'},
+            {label: 'XD', value: '2', desc: 'Often use'},
+            {label: 'Gravit Designer', value: '2', desc: 'Often use'},
+            {label: 'Sketch', value: '1', desc: 'Rarely use now'},
+            {label: 'Illustrator', value: '1', desc: 'Rarely use now'},
+            {label: 'Photoshop', value: '1', desc: 'Rarely use now'},
+            {label: 'After Effect', value: '1', desc: 'Have tried'},
           ]
         },
         {
@@ -130,8 +130,8 @@ export default {
           size: null,
           column: 1,
           skill: [
-            {label: 'Thai', value: '95', desc: 'Native'},
-            {label: 'English', value: '80', desc: 'TOEIC 830'},
+            {label: 'Thai', value: '4', desc: 'Native'},
+            {label: 'English', value: '3', desc: 'TOEIC 855'},
           ]
         }
       ]
