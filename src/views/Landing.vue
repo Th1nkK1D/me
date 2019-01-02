@@ -20,7 +20,9 @@
     </div>
 
     <div id="caret">
-      <i class="icon-arrow-down" @click="go()"></i>
+      <a href="#me" v-smooth-scroll="{ duration: 1000 }">
+        <i class="icon-arrow-down"></i>
+      </a>
     </div>
 
     <div class="cloud" id="cloud-far"></div>
@@ -237,6 +239,7 @@ export default {
   display: flex;
   justify-content: center;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 #text {
@@ -289,7 +292,7 @@ export default {
   bottom: 30px;
   z-index: 19;
 
-  i {
+  a {
     font-size: 28px;
     color: #5F537B;
     opacity: 1;

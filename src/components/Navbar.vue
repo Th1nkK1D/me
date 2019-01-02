@@ -10,7 +10,9 @@
           </div>
         </transition>
         <div class="column is-narrow" @mouseover="hovering = item.route" @mouseleave="hovering = null">
-          <a href="#item.route" :class="{'link': true, 'active': active === i }"><i :class="'icon-' + item.icon"></i></a>
+          <a :href="item.route" :class="{'link': true, 'active': active === i }" v-smooth-scroll="{ duration: 1000 }">
+            <i :class="'icon-' + item.icon"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -28,12 +30,12 @@ export default {
   data() {
     return {
       menuItem: [
-        {name: 'Levitate', route: '/', icon: 'cloud-upload'},
-        {name: 'Me', route: '/profile', icon: 'user'},
-        {name: 'Education', route: '/education', icon: 'graduation'},
-        {name: 'Work', route: '/work', icon: 'briefcase'},
-        {name: 'Projects', route: '/projects', icon: 'rocket'},
-        {name: 'Activities', route: '/activities', icon: 'puzzle'},
+        {name: 'Levitate', route: '#app', icon: 'cloud-upload'},
+        {name: 'Me', route: '#me', icon: 'user'},
+        {name: 'Education', route: '#education', icon: 'graduation'},
+        {name: 'Work', route: '#work', icon: 'briefcase'},
+        {name: 'Projects', route: '#projects', icon: 'rocket'},
+        {name: 'Activities', route: '#activities', icon: 'puzzle'},
       ],
       hovering: null,
     }

@@ -3,20 +3,20 @@
     <navbar ref="NavbarComponent" :active="activeStage" />
     <Scrollama @step-enter="stepEnterHandler">
       <Landing ref="LandingComponent" />
-      <Profile>
-        <Me ref="MeComponent" />
+      <Profile id="me" >
+        <Me ref="MeComponent"/>
       </Profile>
-      <Profile>
+      <Profile id="education">
         <Education ref="EducationComponent" />
       </Profile>
       <Profile>
-        <Work ref="WorkComponent" />
+        <Work ref="WorkComponent" id="work" />
       </Profile>
       <Profile>
-        <Projects ref="ProjectsComponent" />
+        <Projects ref="ProjectsComponent" id="projects" />
       </Profile>
       <Profile>
-        <Activities ref="ActivitiesComponent" />
+        <Activities ref="ActivitiesComponent" id="activities" />
       </Profile>
     </Scrollama>
     <div class="footer">

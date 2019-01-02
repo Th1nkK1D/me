@@ -21,7 +21,6 @@ export default {
 
 <style lang="scss">
   .container {
-    min-height: calc(100vh - 30px);
     position: relative;
   }
 
@@ -43,7 +42,7 @@ export default {
   }
 
   .wrapper {
-    padding: 50px 0 0;
+    padding: 20px 0 50px;
   }
 </style>
 
