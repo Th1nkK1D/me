@@ -1,0 +1,58 @@
+{
+  "bio": [
+    {"icon": "direction", "text": "17 Soi Panichayakarnthonburi 21, Jarunsanitwong 13 Rd, Bangkokyai, Bangkok, Thailand 10600", "size": 11},
+    {"icon": "present", "text": "13 Nov 1996", "size": 4},
+    {"icon": "phone", "text": "+66 85 125 5278", "size": 4},
+    {"icon": "envelope-open", "text": "witheep@gmail.com", "link": "mailto:witheep@gmail.com", "size": 4},
+    {"icon": "social-facebook", "text": "Lookkid Withee Poositasai", "link": "https://www.facebook.com/Th1nkK1D", "size": 4},
+    {"icon": "social-github", "text": "Th1nkK1D", "link": "https://github.com/Th1nkK1D", "size": 4},
+    {"custom_icon": "/static/svg/codepen.min.svg", "text": "@Th1nkK1D", "link": "https://codepen.io/Th1nkK1D", "size": 4}
+  ],
+  "hobbies" : "Coding - Reading - Drawing - Cycling - Playing Piano - Going for an adventure once in a while",
+  "skills": [
+    {
+      "name": "Developer",
+      "size": 6,
+      "column": 2,
+      "skill": [
+        {"label": "HTML", "value": "3", "desc": "Use for work"},
+        {"label": "CSS + SASS", "value": "3", "desc": "Use for work"},
+        {"label": "Javascript", "value": "3", "desc": "Use for work"},
+        {"label": "VueJS 2", "value": "3", "desc": "Often used"},
+        {"label": "React", "value": "2", "desc": "Use during internship"},
+        {"label": "Angular 4", "value": "2", "desc": "Use for some work"},
+        {"label": "Go", "value": "2", "desc": "Use for some project"},
+        {"label": "Python", "value": "2", "desc": "Use for some project"},
+        {"label": "Ruby", "value": "1", "desc": "Rarely used"},
+        {"label": "PHP", "value": "1", "desc": "Rarely used"},
+        {"label": "C", "value": "1", "desc": "Rarely used"},
+        {"label": "R", "value": "1", "desc": "Had learnt"},
+        {"label": "Unity", "value": "1", "desc": "Rarely used"},
+        {"label": "Solidity", "value": "1", "desc": "Had learnt"}
+      ]
+    },
+    {
+      "name": "Designer",
+      "size": null,
+      "column": 1,
+      "skill": [
+        {"label": "XD", "value": "2", "desc": "Often used"},
+        {"label": "Gravit Designer", "value": "2", "desc": "Often used"},
+        {"label": "Sketch", "value": "1", "desc": "Rarely used"},
+        {"label": "Illustrator", "value": "1", "desc": "Rarely used"},
+        {"label": "Photoshop", "value": "1", "desc": "Rarely used"},
+        {"label": "Blender", "value": "1", "desc": "Rarely used"},
+        {"label": "After Effect", "value": "1", "desc": "Rarely used"}
+      ]
+    },
+    {
+      "name": "Languages",
+      "size": null,
+      "column": 1,
+      "skill": [
+        {"label": "Thai", "value": "4", "desc": "Native"},
+        {"label": "English", "value": "3", "desc": "TOEIC 855"}
+      ]
+    }
+  ]
+}

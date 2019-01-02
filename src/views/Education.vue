@@ -6,6 +6,7 @@
 
 <script>
 import Timeline from '@/components/Timeline'
+import { education } from '@/assets/data/education.json'
 
 export default {
   name: 'Education',
@@ -14,12 +15,7 @@ export default {
   },
   data() {
     return {
-      education: [
-        {time: "Now, since Aug '15", head: "King Mongkut's University of Technology Thonburi", subhead: ', Bangkok, Thailand', text: ["Bachelor of Engineering Program in Computer Engineering (International Program)", "GPA 3.75 out of 4 (5 semesters) - Expected May 2019"]},
-        {time: '2017', head: "Jÿvaskÿla University of Technology", subhead: ', Jÿvaskÿla, Finland', text: ["A semester exchange program in the IT department with Erasmus+ Global Scholarship"]},
-        {time: '2016', head: "École d’ingénieurs", subhead: ', Paris, France', text: ["A summer program in Operating Systems"]},
-        {time: '2010 - 2015', head: "Roong-Aroon School", subhead: ', Bangkok, Thailand', text: ["Science-Math Class, GPA 3.76 out of 4", "Got a scholarship for high study performance, good behavior and voluntary activities"]},
-      ]
+      education
     }
   }
 }
