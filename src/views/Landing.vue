@@ -3,7 +3,7 @@
     <div id="text">
       <h1 id="title"><span>L</span><span>O</span> &nbsp;&nbsp;&nbsp;&nbsp; <span>K</span><span>K</span><span>I</span><span>D</span></h1>
       <div class="is-hidden-mobile">
-        <h4 class="subtitle">An optimistic 21 years old Thai youth, in love with integrating code and design.</h4>
+        <h4 class="subtitle">An optimistic {{ myAge }} years old Thai youth, in love with integrating code and design.</h4>
         <h4 class="tag">#Web &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Technologies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Design &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Changemaker &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #SocialStartup</h4>
       </div>
       
@@ -33,6 +33,10 @@
 
 <script>
 import anime from 'animejs'
+import dayjs from 'dayjs'
+
+const myBirthDay = dayjs('1996-11-13')
+const today = dayjs()
 
 let timeline
 let unicon
@@ -107,6 +111,11 @@ function animateCloud(c) {
 
 export default {
   name: 'Landing',
+  computed: {
+    myAge() {
+      return today.diff(myBirthDay, 'year')
+    }
+  },
   mounted() {
     // Init unicorn
     unicon = anime({
@@ -187,40 +196,6 @@ export default {
       duration: 1000,
       offset: 6000,
     })
-    // .add({
-    //   // Text out
-    //   targets: ['#caret','.subtitle','#title','.tag'],
-    //   opacity: 0,
-    //   duration: 3000,
-    //   offset: 7500,
-    // })
-    // .add({
-    //   // Unicon out
-    //   targets: '#balloonicon',
-    //   translateY: '-90vh',
-    //   translateX: '-40vw',
-    //   duration: 3000,
-    //   elasticity: 200,
-    //   easing: 'easeInOutElastic',
-    //   offset: 8000,
-    //   begin: () => unicon.pause()
-    // })
-    // .add({
-    //   // Far Cloud out
-    //   targets: '#cloud-far',
-    //   opacity: 0,
-    //   translateY: '5vh',
-    //   duration: 3000,
-    //   offset: 9000
-    // })
-    // .add({
-    //   // Stage out
-    //   targets: '#stage',
-    //   translateY: '-100vh',
-    //   duration: 600,
-    //   easing: 'easeInQuad',
-    //   offset: 9000
-    // })    
 
     // Attach event listener
     this.$once('onEnter', () => {

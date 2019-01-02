@@ -13,6 +13,7 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "bulma": "^0.6.1",
+    "dayjs": "^1.7.8",
     "intersection-observer": "^0.5.1",
     "simple-line-icons": "^2.4.1",
     "vue": "^2.5.21",
