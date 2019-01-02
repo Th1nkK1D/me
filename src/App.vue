@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <navbar ref="NavbarComponent" :active="activeStage" />
     <Scrollama @step-enter="stepEnterHandler">
       <Landing ref="LandingComponent" />
       <Profile>
@@ -26,12 +27,14 @@ import 'intersection-observer' // for cross-browser support
 import Scrollama from 'vue-scrollama'
 
 import Landing from '@/views/Landing'
-import Profile from '@/components/Profile'
 import Me from '@/views/Me'
 import Education from '@/views/Education'
 import Work from '@/views/Work'
 import Projects from '@/views/Projects'
 import Activities from '@/views/Activities'
+
+import Navbar from '@/components/navbar'
+import Profile from '@/components/Profile'
 
 export default {
   name: 'app',
@@ -43,16 +46,27 @@ export default {
     Education,
     Work,
     Projects,
-    Activities
+    Activities,
+    Navbar
+  },
+  data() {
+    return {
+      activeStage: 0,
+    }
   },
   methods: {
     stepEnterHandler ({element, index, direction}) {
       // console.log('enter', index, direction)
-      if (index === 0) {
-        this.$refs.LandingComponent.$emit('onEnter')
-      } else if (direction === 'down') {
+      this.activeStage = index
+      console.log(this.activeStage)
+
+      if (direction === 'down') {
         switch (index) {
+          case 0:
+            this.$refs.LandingComponent.$emit('onEnter')
+            break;
           case 1:
+            this.$refs.NavbarComponent.$emit('onEnter')
             this.$refs.MeComponent.$emit('onEnter')
             break;
           case 2:
@@ -66,6 +80,12 @@ export default {
             break;
           case 5:
             this.$refs.ActivitiesComponent.$refs.Timeline.$emit('onEnter')
+            break;
+        }
+      } else {
+        switch (index) {
+          case 0:
+            this.$refs.NavbarComponent.$emit('onLeave')
             break;
         }
       }

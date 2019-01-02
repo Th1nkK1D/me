@@ -1,16 +1,15 @@
 <template>
-  <div class="columns is-mobile is-multiline navbar">
-    <div class="column is-12-tablet is-hidden-mobile offseter"></div>
-    <div class="column is-12-tablet item" v-for="item in menuItem" :key="item.route">
+  <div class="columns is-multiline navbar nav-desktop">
+    <div class="column is-12-tablet item" v-for="(item, i) in menuItem" :key="item.route">
       <div class="columns is-gapless">
         <div class="column is-hidden-mobile"></div>
         <transition name="fade">
-          <div v-if="$route.path != item.route && hovering == item.route" class="column is-narrow is-hidden-touch label">
+          <div v-if="hovering === item.route" class="column is-narrow is-hidden-touch label">
             <p>{{item.name}}</p>
           </div>
         </transition>
         <div class="column is-narrow" @mouseover="hovering = item.route" @mouseleave="hovering = null">
-          <router-link :class="{'link': true, 'active': $route.path == item.route}" :to="item.route"><i :class="'icon-' + item.icon"></i></router-link>
+          <a href="#item.route" :class="{'link': true, 'active': active === i }"><i :class="'icon-' + item.icon"></i></a>
         </div>
       </div>
     </div>
@@ -20,8 +19,11 @@
 <script>
 import anime from 'animejs'
 
+let timeline
+
 export default {
   name: 'Navbar',
+  props: ['active'],
   data() {
     return {
       menuItem: [
@@ -36,17 +38,35 @@ export default {
     }
   },
   mounted() {
-    anime({
-      targets: '.item',
+    timeline = anime.timeline({
       direction: 'normal',
+      loop: false,
+      autoplay: false,
+    })
+    .add({
+      targets: '.navbar',
+      opacity: [0,1],
+      duration: 1,
+    })
+    .add({
+      targets: '.item',
       translateX: ['-20vw',0],
       opacity: [0,1],
       duration: 1000,
-      delay: (el,i) => 1000 + i*200,
-      loop: false,
+      delay: (el,i) => i*200,
       easing: 'easeOutQuad',
     })
-  }
+
+    this.$on('onEnter', () => {
+      timeline.restart()
+      timeline.play()
+    })
+
+    this.$on('onLeave', () => {
+      timeline.reverse()
+      timeline.play()
+    })
+  },
 }
 </script>
 
@@ -54,9 +74,14 @@ export default {
 .navbar {
   text-align: center;
   margin: 5px;
+  position: fixed;
+  left: 0;
+  opacity: 0;
+  z-index: 100;
 
-  .offseter {
-    height: 130px;
+  &.nav-desktop {
+    top: 20vh;
+    width: 15vw;
   }
 
   .item {

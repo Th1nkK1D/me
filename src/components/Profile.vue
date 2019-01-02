@@ -23,13 +23,9 @@
 </template>
 
 <script>
-import Navbar from './Navbar'
 
 export default {
   name: 'Profile',
-  components: {
-    Navbar
-  }
 }
 </script>
 
@@ -58,7 +54,7 @@ export default {
 
   .wrapper {
     position: relative;
-    padding: 50px 0;
+    padding: 50px 0 0;
 
     .nav {
       position: fixed;
