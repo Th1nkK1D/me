@@ -19,6 +19,13 @@
         <Activities ref="ActivitiesComponent" />
       </Profile>
     </Scrollama>
+    <div class="footer">
+      <p>
+        <a href="https://github.com/Th1nkK1D/me" target="_blank">
+          Crafted with <i class="icon-heart"></i> by Th1nkK1D
+        </a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -54,6 +61,9 @@ export default {
       activeStage: 0,
     }
   },
+  mounted() {
+    this.$refs.LandingComponent.$emit('onEnter')
+  },
   methods: {
     stepEnterHandler ({element, index, direction}) {
       // console.log('enter', index, direction)
@@ -62,7 +72,6 @@ export default {
       if (direction === 'down') {
         switch (index) {
           case 0:
-            this.$refs.LandingComponent.$emit('onEnter')
             break;
           case 1:
             this.$refs.NavbarComponent.$emit('onEnter')
@@ -105,5 +114,27 @@ body {
 
 .layer {
   opacity: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 30px;
+  font-size: 12px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 70px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #968cad;
+
+    &:hover {
+      color: #5F537B;
+    }
+  }
 }
 </style>
