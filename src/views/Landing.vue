@@ -73,19 +73,19 @@ function animatePartical(p,i) {
 function genCloud(parent,bg,offset) {
   let cl = document.getElementById(parent)
 
-  let cloudSize = 200
-  let amount = Math.ceil(window.screen.availWidth*2/cloudSize)
+  let cloudSize = 20
+  let amount = 100*2/cloudSize //Math.ceil(window.screen.availWidth*2/cloudSize)
   
   for (let i = 0; i < amount; i++) {
     let c = document.createElement('div')
     let rand = anime.random(cloudSize*90/100,cloudSize*110/100)
 
     c.style['background-color'] = bg
-    c.style['width'] = rand+'px'
-    c.style['height'] = rand+'px'
+    c.style['width'] = rand+'vw'
+    c.style['height'] = rand+'vw'
     c.style['position'] = 'absolute'
-    c.style['bottom'] = -rand/2+'px'
-    c.style['left'] = i*cloudSize*2/3 - rand/2 + anime.random(-cloudSize/20,cloudSize/20) + offset + 'px'
+    c.style['bottom'] = -rand/2+'vw'
+    c.style['left'] = i*cloudSize*2/3 - rand/2 + anime.random(-cloudSize/20,cloudSize/20) + offset*cloudSize + 'vw'
     c.style['border-radius'] = '50%'
     c.style['z-index'] = 20
     cl.appendChild(c)
@@ -125,7 +125,7 @@ export default {
       direction: 'normal',
       autoplay: false,
       begin: () => {
-        genCloud('cloud-far','#CBC2DF',-75)
+        genCloud('cloud-far','#CBC2DF',-0.5)
         genCloud('cloud-close','white',0)
         genPartical()
       }
@@ -292,14 +292,23 @@ export default {
   bottom: 30px;
   z-index: 19;
 
+  @media (max-width: 768px) {
+    bottom: 30vw;
+  }
+
   a {
-    font-size: 28px;
+    font-size: 24px;
     color: #5F537B;
     opacity: 1;
     cursor: pointer;
 
     &:hover {
       opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+      color: white;
+      font-size: 16px;
     }
   }
 }
