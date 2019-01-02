@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div :id="this.label.slice(0,3)">
     <div class="columns is-gapless is-mobile text">
       <div class="column">{{label}}</div>
       <div class="column is-narrow desc">{{desc}}</div>
     </div>
     <div class="bar">
-      <div class="scale" :id="this.label.slice(0,3)"></div>
+      <div class="scale"></div>
       <div class="indicator" style="left: 25%"></div>
       <div class="indicator" style="left: 50%"></div>
       <div class="indicator" style="left: 75%"></div>
@@ -25,16 +25,25 @@ export default {
     }
   },
   mounted() {
+    const skillId = this.label.slice(0,3)
+
     this.$parent.$on('activateSkill', () => {
-      anime({
-        targets: '#'+this.label.slice(0,3),
+      anime.timeline({
         direction: 'normal',
-        width: ['0%',this.value*25+'%'],
-        round: 1,
-        duration: 2000,
         loop: false,
         autoplay: true,
-        easing: 'easeInOutQuad',
+        easing: 'easeInOutQuad'
+      })
+      .add({
+        targets: '#'+skillId+' .scale',
+        width: ['0%',this.value*25+'%'],
+        round: 1,
+        duration: 2000
+      })
+      .add({
+        targets: '#'+skillId+' .desc',
+        opacity: [0,1],
+        duration: 1000
       })
     })
   }
@@ -51,6 +60,7 @@ export default {
 
     .desc {
       color: #919191;
+      opacity: 0;
     }
   }
 
