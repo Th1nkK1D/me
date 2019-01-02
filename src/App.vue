@@ -103,40 +103,40 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../node_modules/bulma/sass/utilities/_all.sass';
-@import '../node_modules/bulma/sass/grid/columns.sass';
-@import '../node_modules/bulma/sass/base/_all.sass';
+  @import '../node_modules/bulma/sass/utilities/_all.sass';
+  @import '../node_modules/bulma/sass/grid/columns.sass';
+  @import '../node_modules/bulma/sass/base/_all.sass';
 
-body {
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  width: 100vw;
-  overflow: hidden;
-}
-
-.layer {
-  opacity: 0;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 30px;
-  font-size: 12px;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 70px;
+  body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    width: 100vw;
+    overflow: hidden;
   }
 
-  a {
-    text-decoration: none;
-    color: #968cad;
+  .layer {
+    opacity: 0;
+  }
 
-    &:hover {
-      color: #5F537B;
+  .footer {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 30px;
+    font-size: 12px;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 70px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #968cad;
+
+      &:hover {
+        color: #5F537B;
+      }
     }
   }
-}
 </style>

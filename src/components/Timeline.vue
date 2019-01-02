@@ -18,7 +18,7 @@
           </div>
         </div>
         
-        <div class="spacer" v-if="e < data.length-1"></div>
+        <!-- <div class="spacer" v-if="e < data.length-1"></div> -->
       </div>
     </div>
   </div>
@@ -66,7 +66,14 @@ export default {
     border-left-width: 1px;
 
     .card {
-      padding: 0 30px;
+      margin: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.08) 0 0 20px;
+
+      @media (max-width: 768px) {
+        margin: 15px;
+      }
 
       p {
         margin: 0;

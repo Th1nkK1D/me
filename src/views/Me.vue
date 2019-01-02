@@ -4,8 +4,8 @@
     <!-- bio -->
     <div class="columns is-gapless layer layer-me bio">
       <div class="column is-narrow">
-        <div class="padder">
-          <img src="/static/img/lkavatar.jpg" alt="" class="avatar">
+        <div class="avatar padder">
+          <img src="/static/img/lkavatar.jpg" alt="avatar">
         </div>
       </div>
       <div class="column">
@@ -14,7 +14,7 @@
 
           <div class="columns is-gapless is-multiline is-desktop">
             <div v-for="field in bio" :key="field.icon" :class="'column is-'+field.size+'-desktop'">
-              <div class="columns is-gapless is-mobile padder">
+              <div class="columns is-gapless is-mobile" style="padding-bottom: 0.7rem;">
                 <div class="column is-narrow">
                   <i v-if="field.icon" :class="'icon-'+field.icon"></i>
                   <img v-else :src="field.custom_icon" class="custom-icon">
@@ -95,9 +95,15 @@ export default {
 <style lang="scss" scoped>
   .bio {
     .avatar {
-      border-radius: 50%;
-      width: 10em;
-      height: auto;
+      display: flex;
+      justify-content: center;
+
+      img {
+        border-radius: 50%;
+        width: 12em;
+        height: auto;
+        margin: auto;
+      }
     }
 
     .name {
