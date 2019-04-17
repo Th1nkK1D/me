@@ -1,0 +1,15 @@
+{
+  "name": "Th1nkK1D",
+  "short_name": "Th1nkK1D",
+  "icons": [
+    {
+      "src": "./favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#5F537B"
+}
