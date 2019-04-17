@@ -40,6 +40,8 @@ const today = dayjs()
 
 let timeline
 let unicon
+let clouds = []
+let particles = []
 
 function genPartical() {
   let uc = document.getElementById('balloonicon')
@@ -56,12 +58,12 @@ function genPartical() {
     p.style['border-radius'] = '50%'
     p.style['z-index'] = 0
     uc.appendChild(p);
-    animatePartical(p,i)
+    particles.push(animatePartical(p,i))
   }
 }
 
 function animatePartical(p,i) {
-  anime({
+  return anime({
     targets: p,
     delay: () => i*10,
     translateX: () => anime.random(6,12)+'vw',
@@ -93,12 +95,12 @@ function genCloud(parent,bg,offset) {
     c.style['border-radius'] = '50%'
     c.style['z-index'] = 20
     cl.appendChild(c)
-    animateCloud(c)
+    clouds.push(animateCloud(c))
   }
 }
 
 function animateCloud(c) {
-  anime({
+  return anime({
     targets: c,
     direction: 'alternate',
     delay: () => anime.random(0,1000),
@@ -132,7 +134,7 @@ export default {
     // Init timeline
     timeline = anime.timeline({
       direction: 'normal',
-      autoplay: false,
+      autoplay: true,
       begin: () => {
         genCloud('cloud-far','#CBC2DF',-0.5)
         genCloud('cloud-close','white',0)
@@ -198,8 +200,16 @@ export default {
     })
 
     // Attach event listener
-    this.$once('onEnter', () => {
-      timeline.play()
+    this.$on('onEnter', () => {
+      unicon.play()
+      clouds.forEach(c => c.play())
+      particles.forEach(p => p.play())
+    })
+    this.$on('onLeave', () => {
+      timeline.pause()
+      unicon.pause()
+      clouds.forEach(c => c.pause())
+      particles.forEach(p => p.pause())
     })
   }
 }

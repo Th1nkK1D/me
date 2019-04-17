@@ -74,6 +74,7 @@ export default {
           case 0:
             break;
           case 1:
+            this.$refs.LandingComponent.$emit('onLeave')
             this.$refs.NavbarComponent.$emit('onEnter')
             this.$refs.MeComponent.$emit('onEnter')
             break;
@@ -93,6 +94,7 @@ export default {
       } else {
         switch (index) {
           case 0:
+            this.$refs.LandingComponent.$emit('onEnter')
             this.$refs.NavbarComponent.$emit('onLeave')
             break;
         }

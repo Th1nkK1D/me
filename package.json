@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "animejs": "^3.0.1",
+    "animejs": "2.2.0",
     "bulma": "^0.7.4",
     "core-js": "^2.6.5",
     "dayjs": "^1.8.12",
