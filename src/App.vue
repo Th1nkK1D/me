@@ -40,7 +40,7 @@ import Work from '@/views/Work'
 import Projects from '@/views/Projects'
 import Activities from '@/views/Activities'
 
-import Navbar from '@/components/navbar'
+import Navbar from '@/components/Navbar'
 import Profile from '@/components/Profile'
 
 export default {

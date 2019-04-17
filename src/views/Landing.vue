@@ -16,7 +16,7 @@
     </div>
 
     <div id="balloonicon">
-      <object id="unicorn" data="/static/svg/balloonicorn2.min.svg" type="image/svg+xml"></object>
+      <object id="unicorn" data="/svg/balloonicorn2.min.svg" type="image/svg+xml"></object>
     </div>
 
     <div id="caret">

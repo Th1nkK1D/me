@@ -5,7 +5,7 @@
     <div class="columns is-gapless layer layer-me bio">
       <div class="column is-narrow">
         <div class="avatar padder">
-          <img src="/static/img/lkavatar.jpg" alt="avatar">
+          <img src="/img/lkavatar.jpg" alt="avatar">
         </div>
       </div>
       <div class="column">

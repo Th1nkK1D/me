@@ -6,7 +6,7 @@
     {"icon": "envelope-open", "text": "witheep@gmail.com", "link": "mailto:witheep@gmail.com", "size": 4},
     {"icon": "social-facebook", "text": "Lookkid Withee Poositasai", "link": "https://www.facebook.com/Th1nkK1D", "size": 4},
     {"icon": "social-github", "text": "Th1nkK1D", "link": "https://github.com/Th1nkK1D", "size": 4},
-    {"custom_icon": "/static/svg/codepen.min.svg", "text": "@Th1nkK1D", "link": "https://codepen.io/Th1nkK1D", "size": 4},
+    {"custom_icon": "/svg/codepen.min.svg", "text": "@Th1nkK1D", "link": "https://codepen.io/Th1nkK1D", "size": 4},
     {"icon": "notebook", "text": "@Th1nkK1D", "link": "https://medium.com/@Th1nkK1D", "size": 4},
     {"icon": "social-youtube", "text": "Witheep", "link": "https://youtube.com/witheep", "size": 4}
   ],
