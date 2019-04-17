@@ -24,18 +24,18 @@ export default {
     position: relative;
   }
 
-  h1 {
-    font-weight: 300;
-    font-size: 58px;
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
   .title {
     color: #5F537B;
+
+    &.t1 {
+      font-weight: 300;
+      font-size: 58px;
+    }
+
+    &.t2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
   }
   .padder {
     margin: 0.5em 1em;

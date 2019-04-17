@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 :class="'title layer layer-'+layerClass">{{title}}</h1>
+    <h1 :class="'title t1 layer layer-'+layerClass">{{title}}</h1>
     <div :class="'timeline layer layer-'+layerClass">
       <div :class="'card layer layer-'+layerClass" v-for="(event,e) in data" :key="e">
         <div class="columns is-gapless">

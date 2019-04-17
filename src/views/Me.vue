@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title layer layer-me">ME</h1>
+    <h1 class="title t1 layer layer-me">ME</h1>
     <!-- bio -->
     <div class="columns is-gapless layer layer-me bio">
       <div class="column is-narrow">
@@ -30,14 +30,14 @@
       </div>
     </div><!-- end of bio -->
 
-    <h2 class="layer layer-me title">Hobbies</h2>
+    <h2 class="layer layer-me title t2">Hobbies</h2>
     <div class="padder layer layer-me">
       {{ hobbies }}
     </div>
 
     <br>
     
-    <h2 class="layer layer-me title">Skills</h2>
+    <h2 class="layer layer-me title t2">Skills</h2>
     <!-- skills -->
     <div class="columns is-gapless is-desktop layer layer-me">
       <div v-for="cat in skills" :key="cat.name" :class="'column is-' + cat.size + '-desktop'">

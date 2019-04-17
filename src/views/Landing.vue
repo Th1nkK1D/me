@@ -201,6 +201,7 @@ export default {
 
     // Attach event listener
     this.$on('onEnter', () => {
+      timeline.play()
       unicon.play()
       clouds.forEach(c => c.play())
       particles.forEach(p => p.play())
