@@ -1,12 +1,21 @@
 {
   "education": [
     {
-      "time": "Now, since Aug '15", 
+      "time": "2015-2019", 
       "head": "King Mongkut's University of Technology Thonburi", 
       "subhead": ", Bangkok, Thailand", 
       "text": [
         "Bachelor of Engineering Program in Computer Engineering (International Program)",
-        "GPA 3.79 out of 4 (7 semesters) - Expected graduation in May 2019"
+        "GPA 3.81 out of 4 (First-class honours)"
+      ]
+    },
+    {
+      "time": "2019", 
+      "head": "National Taiwan University", 
+      "subhead": ", Taipei, Taiwan", 
+      "text": [
+        "MOST GASE Q+ Summer Program 2019 from 17 June to 27 July 2019",
+        "I studied about quantum opimization algorithm with Qiskit"
       ]
     },
     {
@@ -26,7 +35,7 @@
       ]
     },
     {
-      "time": "2010 - 2015",
+      "time": "2009 - 2015",
       "head": "Roong-Aroon School",
       "subhead": ", Bangkok, Thailand",
       "text": [
