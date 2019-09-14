@@ -6,7 +6,7 @@
 
 <script>
 import Timeline from '@/components/Timeline'
-import { activities } from '@/assets/data/activities.json'
+import db from '../db'
 
 export default {
   name: 'Activities',
@@ -15,8 +15,11 @@ export default {
   },
   data() {
     return {
-      activities
+      activities: []
     }
+  },
+  firebase: {
+    activities: db.ref("activities")
   }
 }
 </script>

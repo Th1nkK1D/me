@@ -32,7 +32,7 @@
 
     <h2 class="layer layer-me title t2">Hobbies</h2>
     <div class="padder layer layer-me">
-      {{ hobbies }}
+      {{ hobbies && hobbies.text }}
     </div>
 
     <br>
@@ -58,7 +58,7 @@
 <script>
 import anime from 'animejs'
 import Skillbar from '@/components/Skillbar'
-import { bio, hobbies, skills } from '@/assets/data/me.json'
+import db from '../db'
 
 export default {
   name: 'Me',
@@ -84,11 +84,16 @@ export default {
   },
   data() {
     return {
-      bio,
-      hobbies,
-      skills
+      bio: [],
+      hobbies: {},
+      skills: []
     }
-  }
+  },
+  firebase: {
+    bio: db.ref('bio'),
+    hobbies: db.ref('hobbies'),
+    skills: db.ref('skills')
+  },
 }
 </script>
 

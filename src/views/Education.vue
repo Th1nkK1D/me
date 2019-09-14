@@ -6,7 +6,7 @@
 
 <script>
 import Timeline from '@/components/Timeline'
-import { education } from '@/assets/data/education.json'
+import db from '../db'
 
 export default {
   name: 'Education',
@@ -15,8 +15,11 @@ export default {
   },
   data() {
     return {
-      education
+      education: []
     }
+  },
+  firebase: {
+    education: db.ref('education')
   }
 }
 </script>
